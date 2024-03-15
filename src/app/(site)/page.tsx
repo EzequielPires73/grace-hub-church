@@ -46,7 +46,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col min-w-72 flex-1 text-white z-50">
               <h2 className="text-xl font-semibold text-white">PR. CORNÉLIO NETO</h2>
-              <h3 className="text-base font-medium mb-2 text-white/80">Fundador e Pastor Presidente da CEIZS</h3>
+              <h3 className="text-base font-medium mb-2 text-white/80">Pastor Presidente da AD Catalão</h3>
               <p className="mb-4 text-sm text-white/70">O PR. CORNÉLIO NETO é um homem de Deus cuja fé inspira e desafia milhares de pessoas ao redor do mundo. É um avivalista que dedica a sua vida para ver todos aqueles que o ouvem serem cheios da mesma chama que há em seu coração: o Espírito Santo. Com ousadia, intrepidez e pioneirismo desenvolve projetos nas áreas de formação de liderança e evangelismos criativos. Seus livros sobre o poder da fé e os programas de televisão e rádio que apresenta são instrumentos pelos quais tem feito o evangelho chegar a incontáveis multidões.</p>
               <Link href={'/'} className="h-10 min-w-[168px] w-fit border border-white text-white px-8 flex items-center justify-center">Conheça mais</Link>
             </div>
