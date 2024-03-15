@@ -7,7 +7,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <div className="flex flex-col pt-24">
+        <div className="flex flex-col pt-20">
             <HeaderSite />
             {children}
             <footer className="bg-gray-900 py-4 px-3 gap-2 flex flex-col justify-center items-center">
