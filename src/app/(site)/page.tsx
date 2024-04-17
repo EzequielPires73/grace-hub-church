@@ -1,5 +1,7 @@
 import { ButtonPrimary } from "@/components/buttons/button-primary";
+import { CardNotice } from "@/components/cards/card-notice";
 import { Title } from "@/components/typography/title";
+import { notices } from "@/models/notice";
 import Image from "next/image";
 import Link from "next/link";
 import { FaEnvelope, FaFacebook, FaTwitter, FaWhatsapp } from "react-icons/fa6";
@@ -40,8 +42,8 @@ export default function Home() {
         </section>
 
         <section className="bg-gray-900 min-h-[400px] max-md:py-10 relative">
-          <section className="h-full flex flex-wrap items-center gap-4 w-full max-w-7xl px-3 mx-auto">
-            <div className="flex-1 flex items-end justify-center h-full max-md:absolute max-md:bottom-0 max-md:opacity-20 max-md:-z-0">
+          <section className="h-full min-h-[400px] flex flex-wrap items-center gap-4 w-full max-w-7xl px-3 mx-auto">
+            <div className="min-h-[400px] flex-1 flex items-end justify-center h-full max-md:absolute max-md:bottom-0 max-md:opacity-20 max-md:-z-0">
               <Image src={"/assets/pastores.png"} alt="" width={348} height={200} />
             </div>
             <div className="flex flex-col min-w-72 flex-1 text-white z-50">
@@ -57,82 +59,7 @@ export default function Home() {
           <section className="h-full flex flex-col justify-center items-center gap-6 w-full max-w-7xl px-3 mx-auto">
             <h2 className="text-xl font-semibold text-gray-800 text-center uppercase">Últimas notícias</h2>
             <div className="w-full grid lg:grid-cols-4 gap-4">
-              <div className="p-2 border border-gray-300 flex flex-col max-lg:flex-row max-lg:gap-3">
-                <div className="max-lg:w-20">
-                  <Image src={'/assets/image-01.png'} alt="" width={300} height={300} />
-                </div>
-                <div className="flex flex-col flex-1">
-                  <h4 className="text-lg max-lg:text-base font-semibold text-gray-800 mt-2">Um Título para a notícia</h4>
-                  <p className="text-sm text-gray-800">Uma pequena descrição para a notícia aqui.</p>
-                  <div className="flex justify-between items-center text-sm text-gray-800 mt-2">
-                    <div className="flex gap-2 items-center">
-                      <FiCalendar />
-                      8 de mar de 2024
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <FiClock />
-                      18:20
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="p-2 border border-gray-300 flex flex-col max-lg:flex-row max-lg:gap-3">
-                <div className="max-lg:w-20">
-                  <Image src={'/assets/image-02.png'} alt="" width={300} height={300} />
-                </div>
-                <div className="flex flex-col flex-1">
-                  <h4 className="text-lg max-lg:text-base font-semibold text-gray-800 mt-2">Um Título para a notícia</h4>
-                  <p className="text-sm text-gray-800">Uma pequena descrição para a notícia aqui.</p>
-                  <div className="flex justify-between items-center text-sm text-gray-800 mt-2">
-                    <div className="flex gap-2 items-center">
-                      <FiCalendar />
-                      8 de mar de 2024
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <FiClock />
-                      18:20
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="p-2 border border-gray-300 flex flex-col max-lg:flex-row max-lg:gap-3">
-                <div className="max-lg:w-20">
-                  <Image src={'/assets/image-03.png'} alt="" width={300} height={300} />
-                </div>
-                <div className="flex flex-col flex-1">
-                  <h4 className="text-lg max-lg:text-base font-semibold text-gray-800 mt-2">Um Título para a notícia</h4>
-                  <p className="text-sm text-gray-800">Uma pequena descrição para a notícia aqui.</p>
-                  <div className="flex justify-between items-center text-sm text-gray-800 mt-2">
-                    <div className="flex gap-2 items-center">
-                      <FiCalendar />
-                      8 de mar de 2024
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <FiClock />
-                      18:20
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="p-2 border border-gray-300 flex flex-col max-lg:flex-row max-lg:gap-3">
-                <div className="max-lg:w-20">
-                  <Image src={'/assets/image-04.png'} alt="" width={300} height={300} />
-                </div>
-                <div className="flex flex-col flex-1">
-                  <h4 className="text-lg max-lg:text-base font-semibold text-gray-800 mt-2">Um Título para a notícia</h4>
-                  <p className="text-sm text-gray-800">Uma pequena descrição para a notícia aqui.</p>
-                  <div className="flex justify-between items-center text-sm text-gray-800 mt-2">
-                    <div className="flex gap-2 items-center">
-                      <FiCalendar />
-                      8 de mar de 2024
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <FiClock />
-                      18:20
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {notices.map(notice => <CardNotice key={notice.id} notice={notice}/>)}
             </div>
             <Link href={'/'} className="h-10 min-w-[168px] border border-gray-800 text-gray-800 px-8 flex items-center justify-center">Veja mais</Link>
           </section>
@@ -142,9 +69,9 @@ export default function Home() {
           <section className="h-full min-h-[400px] py-10 flex flex-col justify-center items-center gap-6 w-full max-w-7xl px-3 mx-auto">
             <h2 className="text-xl font-semibold text-white text-center">CONHEÇA O CANAL DO YOUTUBE</h2>
             <div className="flex max-md:flex-wrap gap-6">
-              <iframe width="100%" height="180px" src="https://www.youtube.com/embed/x22TixS8enE?si=fuFzgUmFVgoBlD0N" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
-              <iframe width="100%" height="180px" src="https://www.youtube.com/embed/hrjD804Auok?si=az4uHKD4V6Xn8hCt" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
-              <iframe width="100%" height="180px" src="https://www.youtube.com/embed/TcdnSo8GeSo?si=d9zyxn9ecAcaxbn0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+              <iframe width="360px" height="202px" src="https://www.youtube.com/embed/x22TixS8enE?si=fuFzgUmFVgoBlD0N" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+              <iframe width="360px" height="202px" src="https://www.youtube.com/embed/hrjD804Auok?si=az4uHKD4V6Xn8hCt" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+              <iframe width="360px" height="202px" src="https://www.youtube.com/embed/TcdnSo8GeSo?si=d9zyxn9ecAcaxbn0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
             </div>
             <Link href={'/'} className="h-10 min-w-[168px] border border-white text-white px-8 flex items-center justify-center">Assista mais</Link>
           </section>
