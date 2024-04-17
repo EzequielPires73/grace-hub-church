@@ -31,10 +31,10 @@ export function HeaderSite() {
                     <Link href={'/'}>
                         <Image src="/assets/logo-icon.svg" alt="Logo" width={64} height={64} />
                     </Link>
-                    <Link href={'/'}>Igreja</Link>
+                    <Link href={'/about'}>Igreja</Link>
                     <Link href={'/'}>Doação</Link>
                     <Link href={'/'}>Ao vivo</Link>
-                    <Link href={'/'}>Mural de orações</Link>
+                    <Link href={'/prayer'}>Mural de orações</Link>
                     <Link href={'/'}>Eventos</Link>
                 </div>
                 <div className="flex gap-4">
