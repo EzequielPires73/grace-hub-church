@@ -6,8 +6,8 @@ import { FiCalendar, FiClock, FiShare } from "react-icons/fi";
 
 export default function NewsPage() {
     return (
-        <div className="flex-1 flex flex-col gap-6 w-full max-w-[800px] mx-auto py-6 mb-6">
-            <div className="w-full h-[336px] relative rounded-lg overflow-hidden">
+        <div className="flex-1 flex flex-col gap-6 w-full max-w-[800px] px-3 mx-auto lg:py-6 mb-6">
+            <div className="w-full h-[248px] lg:h-[336px] relative rounded-lg overflow-hidden">
                 <Image src={'/assets/image-02.png'} alt="" fill objectFit="cover" />
                 <div className="absolute top-0 left-0 right-0 bottom-0 backdrop-blur-lg"></div>
                 <Image src={'/assets/image-02.png'} alt="" fill objectFit="contain" />

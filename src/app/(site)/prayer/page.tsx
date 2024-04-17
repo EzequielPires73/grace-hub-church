@@ -6,8 +6,8 @@ import { FiChevronDown, FiFilter, FiHeart, FiMail, FiSearch } from "react-icons/
 export default async function PrayerPage() {
     return (
         <div className="flex-1 flex flex-col gap-6 w-full max-w-7xl mx-auto px-3">
-            <div className="flex justify-between">
-                <div className="flex gap-6">
+            <div className="flex justify-between flex-wrap gap-4">
+                <div className="flex flex-wrap gap-4">
                     <div>
                         <button className="flex justify-between items-center h-10 min-w-80 px-3 border border-gray-300">
                             <div className="flex gap-2 items-center">
@@ -24,7 +24,19 @@ export default async function PrayerPage() {
                 </div>
                 <button className="h-10 min-w-[168px] bg-gray-800 border border-gray-800 text-white px-8 flex items-center justify-center">Fazer um pedido</button>
             </div>
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid lg:grid-cols-3 gap-6">
+                <CardPrayer />
+                <CardPrayer />
+                <CardPrayer />
+                <CardPrayer />
+                <CardPrayer />
+                <CardPrayer />
+                <CardPrayer />
+                <CardPrayer />
+                <CardPrayer />
+                <CardPrayer />
+                <CardPrayer />
+                <CardPrayer />
                 <CardPrayer />
                 <CardPrayer />
                 <CardPrayer />
