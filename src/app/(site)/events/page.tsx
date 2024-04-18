@@ -1,0 +1,37 @@
+import { CardEvent } from "@/components/cards/card-event";
+import { Title } from "@/components/typography/title";
+import { notices } from "@/models/notice";
+import { FiChevronDown, FiFilter, FiSearch } from "react-icons/fi";
+
+export default function Events() {
+    return (
+        <div className="flex-1 flex flex-col gap-6 w-full max-w-7xl mx-auto px-3">
+            <Title text={"Eventos"} />
+            <div className="grid grid-cols-4 gap-4">
+                <div className="w-full">
+                    <button className="flex justify-between items-center h-10 w-full max-w-80 px-3 border border-gray-300">
+                        <div className="flex gap-2 items-center">
+                            <FiFilter />
+                            <span className="text-sm text-gray-400">Filtrar por motivo</span>
+                        </div>
+                        <FiChevronDown />
+                    </button>
+                </div>
+                <div className="relative flex items-center h-10 w-full max-w-80 border border-gray-300">
+                    <FiSearch className="absolute left-3" />
+                    <input className="h-full w-full outline-none pl-10 placeholder:text-sm pr-3 text-ellipsis" placeholder="Buscar por nome do autor ou mensagem" />
+                </div>
+            </div>
+            <div className="grid lg:grid-cols-4 gap-4">
+                <CardEvent notice={notices[0]} />
+                <CardEvent notice={notices[1]} />
+                <CardEvent notice={notices[2]} />
+                <CardEvent notice={notices[3]} />
+                <CardEvent notice={notices[0]} />
+                <CardEvent notice={notices[1]} />
+                <CardEvent notice={notices[2]} />
+                <CardEvent notice={notices[3]} />
+            </div>
+        </div>
+    )
+}

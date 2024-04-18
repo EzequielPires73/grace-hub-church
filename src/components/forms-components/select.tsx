@@ -5,7 +5,7 @@ import { OptionSelectProps } from '../../hooks/useSelect';
 import { FiChevronDown, FiX } from 'react-icons/fi';
 
 interface Props {
-    title?: string;
+    label?: string;
     placeholder?: string;
     value?: OptionSelectProps;
     onChange?: any;
@@ -15,64 +15,28 @@ interface Props {
     required?: boolean;
 }
 
-const Select = ({ onChange, title, value, onBlur, options, required, error, placeholder }: Props) => {
+const Select = ({ onChange, label, value, onBlur, options, required, error, placeholder }: Props) => {
     const inputRef = React.useRef(null);
-    const [inputValue, setInputValue] = useState('');
     const [isOpen, setIsOpen] = useState(false);
-    const [highlightedIndex, setHighlightedIndex] = useState(-1);
-
-    const handleInputChange = (event: any) => {
-        setInputValue(event.target.value);
-        setIsOpen(true);
-    };
 
     const handleOptionClick = (option: OptionSelectProps) => {
         if (option) {
             onChange(option);
-            setInputValue(option.name);
             setIsOpen(false);
         } else {
             console.log(value);
             { value && alert(option); }
-            { value?.name && setInputValue(value.name) }
             setIsOpen(false);
-        }
-    };
-
-    const handleKeyDown = (event: any) => {
-        if (event.key === 'ArrowUp') {
-            event.preventDefault();
-            if (highlightedIndex > 0) {
-                setHighlightedIndex(highlightedIndex - 1);
-            }
-        } else if (event.key === 'ArrowDown') {
-            event.preventDefault();
-            if (highlightedIndex < options.length - 1) {
-                setHighlightedIndex(highlightedIndex + 1);
-            }
-        } else if (event.key === 'Enter') {
-            event.preventDefault();
-            if (highlightedIndex !== -1) {
-                setInputValue(options[highlightedIndex].name);
-                onChange(options[highlightedIndex]);
-                setIsOpen(false);
-            }
         }
     };
 
     const handleOutsideClick = (event: any) => {
         if (inputRef.current && !inputRef.current.contains(event.target)) {
             setIsOpen(false);
-            { value?.name ? setInputValue(value.name) : setInputValue('') }
         }
     };
 
     useEffect(() => {
-        if (value?.name) {
-            setInputValue(value.name);
-        } else {
-            setInputValue('');
-        }
         document.addEventListener('mousedown', handleOutsideClick);
 
         return () => {
@@ -81,14 +45,14 @@ const Select = ({ onChange, title, value, onBlur, options, required, error, plac
     }, [value]);
 
     return (
-        <div className="relative flex flex-col w-full flex-1 gap-1">
+        <div className="relative flex flex-col w-full gap-1">
             <div className="flex gap-1">
-                {title && <label className='text-sm font-medium text-zinc-800'>{title}</label>}
+                {label && <label className='text-sm font-medium text-zinc-800'>{label}</label>}
                 {required && <span className="font-bold text-sm text-red-500">*</span>}
             </div>
             <div className="relative flex flex-col w-full" ref={inputRef}>
                 <span
-                    className={`flex items-center cursor-pointer w-full px-4 py-2 rounded border bg-white focus:outline-none focus:border-blue-500 ${isOpen && 'border-blue-600'}`}
+                    className={`flex items-center cursor-pointer w-full px-4 py-2 border bg-white focus:outline-none focus:border-blue-500 ${isOpen && 'border-blue-600'}`}
                     onClick={() => setIsOpen(true)}
                 >
                     {value?.name ?
@@ -101,7 +65,6 @@ const Select = ({ onChange, title, value, onBlur, options, required, error, plac
                     }
                     {value?.name && <button className='mr-2' onClick={() => {
                         onChange(null)
-                        setInputValue('');
                     }}><FiX /></button>}
                     <button onClick={() => setIsOpen(!isOpen)}><FiChevronDown /></button>
                 </span>
@@ -115,7 +78,7 @@ const Select = ({ onChange, title, value, onBlur, options, required, error, plac
                                 ?.map((option, index) => (
                                     <li
                                         key={index}
-                                        className={`text-sm px-4 py-2 cursor-pointer hover:bg-gray-200 ${value?.id === option.id && 'bg-blue-100 text-blue-900 font-medium'} ${highlightedIndex === index && 'bg-gray-100'}`}
+                                        className={`text-sm px-4 py-2 cursor-pointer hover:bg-gray-200 ${value?.id === option.id && 'bg-blue-100 text-blue-900 font-medium'}`}
                                         onClick={() => handleOptionClick(option)}
                                     >
                                         {option.name}

@@ -1,11 +1,14 @@
 import { CardPrayer } from "@/components/cards/card-prayer";
 import { Label } from "@/components/typography/label";
 import { Span } from "@/components/typography/span";
+import { Title } from "@/components/typography/title";
+import Link from "next/link";
 import { FiChevronDown, FiFilter, FiHeart, FiMail, FiSearch } from "react-icons/fi";
 
 export default async function PrayerPage() {
     return (
         <div className="flex-1 flex flex-col gap-6 w-full max-w-7xl mx-auto px-3">
+            <Title text={"Mural de orações"} />
             <div className="flex justify-between flex-wrap gap-4">
                 <div className="flex flex-wrap gap-4">
                     <div>
@@ -22,7 +25,7 @@ export default async function PrayerPage() {
                         <input className="h-full w-full outline-none pl-10 placeholder:text-sm pr-3 text-ellipsis" placeholder="Buscar por nome do autor ou mensagem" />
                     </div>
                 </div>
-                <button className="h-10 min-w-[168px] bg-gray-800 border border-gray-800 text-white px-8 flex items-center justify-center">Fazer um pedido</button>
+                <Link href={'/prayer/create'} className="h-10 min-w-[168px] bg-gray-800 border border-gray-800 text-white px-8 flex items-center justify-center">Fazer um pedido</Link>
             </div>
             <div className="grid lg:grid-cols-3 gap-6">
                 <CardPrayer />

@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { FaFacebook, FaInstagram, FaTwitch, FaTwitter, FaYoutube } from "react-icons/fa6";
 import { FiMail, FiMenu, FiPhone } from "react-icons/fi";
 import { MenuHeader } from "../menus/menu-header";
+import { ButtonPrimary } from "../buttons/button-primary";
 
 export function HeaderSite() {
     const path = usePathname();
@@ -44,16 +45,16 @@ export function HeaderSite() {
                         <Link href={'/'}>
                             <Image src="/assets/logo-icon.svg" alt="Logo" width={64} height={64} />
                         </Link>
-                        <Link href={'/'} className={`${path == '/' && 'font-medium text-blue-500'}`}>Início</Link>
-                        <Link href={'/about'} className={`${path == '/about' && 'font-medium text-blue-500'}`}>Igreja</Link>
+                        <Link href={'/'} className={`${path.startsWith('/') && path.endsWith('/') && 'font-medium text-indigo-500'}`}>Início</Link>
+                        <Link href={'/about'} className={`${path.startsWith('/about') && 'font-medium text-indigo-500'}`}>Igreja</Link>
                         <Link href={'/'}>Doação</Link>
                         <Link href={'/'}>Ao vivo</Link>
-                        <Link href={'/prayer'} className={`${path == '/prayer' && 'font-medium text-blue-500'}`}>Mural de orações</Link>
-                        <Link href={'/'}>Eventos</Link>
+                        <Link href={'/prayer'} className={`${path.startsWith('/prayer') && 'font-medium text-indigo-500'}`}>Mural de orações</Link>
+                        <Link href={'/events'} className={`${path.startsWith('/events') && 'font-medium text-indigo-500'}`}>Eventos</Link>
                     </div>
                     <div className="flex gap-4">
                         <button className="text-gray-800">Entrar</button>
-                        <button className="h-10 min-w-[168px] border border-gray-800 text-gray-800 px-8 flex items-center justify-center">Criar conta</button>
+                        <ButtonPrimary title="Criar conta" />
                     </div>
                 </nav>
             </header>
