@@ -40,18 +40,22 @@ export default function Home() {
             </div>
           </section>
         </section>
-
-        <section className="bg-gray-900 min-h-[400px] max-md:py-10 relative">
-          <section className="h-full min-h-[400px] flex flex-wrap items-center gap-4 w-full max-w-7xl px-3 mx-auto">
-            <div className="min-h-[400px] flex-1 flex items-end justify-center h-full max-md:absolute max-md:bottom-0 max-md:opacity-20 max-md:-z-0">
-              <Image src={"/assets/pastores.png"} alt="" width={348} height={200} />
-            </div>
-            <div className="flex flex-col min-w-72 flex-1 text-white z-50">
-              <h2 className="text-xl font-semibold text-white">PR. CORNÉLIO NETO</h2>
-              <h3 className="text-base font-medium mb-2 text-white/80">Pastor Presidente da AD Catalão</h3>
-              <p className="mb-4 text-sm text-white/70">O PR. CORNÉLIO NETO é um homem de Deus cuja fé inspira e desafia milhares de pessoas ao redor do mundo. É um avivalista que dedica a sua vida para ver todos aqueles que o ouvem serem cheios da mesma chama que há em seu coração: o Espírito Santo. Com ousadia, intrepidez e pioneirismo desenvolve projetos nas áreas de formação de liderança e evangelismos criativos. Seus livros sobre o poder da fé e os programas de televisão e rádio que apresenta são instrumentos pelos quais tem feito o evangelho chegar a incontáveis multidões.</p>
-              <Link href={'/'} className="h-10 min-w-[168px] w-fit border border-white text-white px-8 flex items-center justify-center">Conheça mais</Link>
-            </div>
+        <section className="min-h-[400px] max-md:py-10 relative" style={{
+          background: 'url(assets/bg-home.jpg)',
+          backgroundSize: 'cover'
+        }}>
+          <section className="bg-gray-900/90 min-h-[400px] max-md:py-10 relative">
+            <section className="h-full min-h-[400px] flex flex-wrap items-center gap-4 w-full max-w-7xl px-3 mx-auto">
+              <div className="min-h-[400px] flex-1 flex items-end justify-center h-full max-md:absolute max-md:bottom-0 max-md:opacity-20 max-md:-z-0">
+                <Image src={"/assets/pastores.png"} alt="" width={348} height={200} />
+              </div>
+              <div className="flex flex-col min-w-72 flex-1 text-white z-50">
+                <h2 className="text-xl font-semibold text-white">PR. CORNÉLIO NETO</h2>
+                <h3 className="text-base font-medium mb-2 text-white/80">Pastor Presidente da AD Catalão</h3>
+                <p className="mb-4 text-sm text-white/70">O PR. CORNÉLIO NETO é um homem de Deus cuja fé inspira e desafia milhares de pessoas ao redor do mundo. É um avivalista que dedica a sua vida para ver todos aqueles que o ouvem serem cheios da mesma chama que há em seu coração: o Espírito Santo. Com ousadia, intrepidez e pioneirismo desenvolve projetos nas áreas de formação de liderança e evangelismos criativos. Seus livros sobre o poder da fé e os programas de televisão e rádio que apresenta são instrumentos pelos quais tem feito o evangelho chegar a incontáveis multidões.</p>
+                <Link href={'/'} className="h-10 min-w-[168px] w-fit border border-white text-white px-8 flex items-center justify-center">Conheça mais</Link>
+              </div>
+            </section>
           </section>
         </section>
 
@@ -59,21 +63,26 @@ export default function Home() {
           <section className="h-full flex flex-col justify-center items-center gap-6 w-full max-w-7xl px-3 mx-auto">
             <h2 className="text-xl font-semibold text-gray-800 text-center uppercase">Últimas notícias</h2>
             <div className="w-full grid lg:grid-cols-4 gap-4">
-              {notices.map(notice => <CardNotice key={notice.id} notice={notice}/>)}
+              {notices.map(notice => <CardNotice key={notice.id} notice={notice} />)}
             </div>
             <Link href={'/'} className="h-10 min-w-[168px] border border-gray-800 text-gray-800 px-8 flex items-center justify-center">Veja mais</Link>
           </section>
         </section>
 
-        <section className="bg-gray-900">
-          <section className="h-full min-h-[400px] py-10 flex flex-col justify-center items-center gap-6 w-full max-w-7xl px-3 mx-auto">
-            <h2 className="text-xl font-semibold text-white text-center">CONHEÇA O CANAL DO YOUTUBE</h2>
-            <div className="flex justify-center max-md:flex-wrap gap-6">
-              <iframe width="360px" height="202px" src="https://www.youtube.com/embed/x22TixS8enE?si=fuFzgUmFVgoBlD0N" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
-              <iframe width="360px" height="202px" src="https://www.youtube.com/embed/hrjD804Auok?si=az4uHKD4V6Xn8hCt" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
-              <iframe width="360px" height="202px" src="https://www.youtube.com/embed/TcdnSo8GeSo?si=d9zyxn9ecAcaxbn0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
-            </div>
-            <Link href={'/'} className="h-10 min-w-[168px] border border-white text-white px-8 flex items-center justify-center">Assista mais</Link>
+        <section className="min-h-[400px] max-md:py-10 relative" style={{
+          background: 'url(assets/bg-home.jpg)',
+          backgroundSize: 'cover'
+        }}>
+          <section className="bg-gray-900/90">
+            <section className="h-full min-h-[400px] py-10 flex flex-col justify-center items-center gap-6 w-full max-w-7xl px-3 mx-auto">
+              <h2 className="text-xl font-semibold text-white text-center">CONHEÇA O CANAL DO YOUTUBE</h2>
+              <div className="flex justify-center max-md:flex-wrap gap-6">
+                <iframe width="360px" height="202px" src="https://www.youtube.com/embed/x22TixS8enE?si=fuFzgUmFVgoBlD0N" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+                <iframe width="360px" height="202px" src="https://www.youtube.com/embed/hrjD804Auok?si=az4uHKD4V6Xn8hCt" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+                <iframe width="360px" height="202px" src="https://www.youtube.com/embed/TcdnSo8GeSo?si=d9zyxn9ecAcaxbn0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+              </div>
+              <Link href={'/'} className="h-10 min-w-[168px] border border-white text-white px-8 flex items-center justify-center">Assista mais</Link>
+            </section>
           </section>
         </section>
 
