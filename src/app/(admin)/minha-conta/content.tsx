@@ -61,10 +61,10 @@ export function MyAccountContent({ user }) {
 
     return (
         <main className="w-full max-w-lg h-full mx-auto px-3 flex flex-col gap-6">
-            <InputText title="Nome" {...name} />
-            <InputText title="Telefone" {...phone} />
-            <InputText title="CPF" {...cpf} />
-            <InputText title="Email" {...email} />
+            <InputText label="Nome" {...name} />
+            <InputText label="Telefone" {...phone} />
+            <InputText label="CPF" {...cpf} />
+            <InputText label="Email" {...email} />
             <div className="flex gap-4">
                 <ButtonPrimary title="Salvar alterações" full onClick={handleSubmit} loading={loadingSubmit} />
                 <ButtonDanger title="Deletar conta" full onClick={() => setShow(true)} disabled={loadingSubmit} />

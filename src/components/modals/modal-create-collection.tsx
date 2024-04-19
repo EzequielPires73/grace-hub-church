@@ -36,14 +36,14 @@ export function ModalCreateCollection({subcategory}) {
         <ModalDefault title="Cadastrar Coleção" submit={() => handleSubmit()} buttonTitle="Cadastrar coleção">
             <InputText
                 id="name"
-                title="Nome do arquivo"
+                label="Nome do arquivo"
                 placeholder="Insira o nome do arquivo"
                 {...name}
                 error={null}
             />
             <Textarea
                 id="description"
-                title="Descrição do arquivo"
+                label="Descrição do arquivo"
                 placeholder="Insira a descrição do arquivo"
                 {...description}
             />
