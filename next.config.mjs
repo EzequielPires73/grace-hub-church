@@ -3,7 +3,10 @@ const nextConfig = {
     images: {
         remotePatterns: [
             {
-                hostname: 'www.maysabrao.com.br'
+                hostname: 'www.maysabrao.com.br',
+            },
+            {
+                hostname: 'localhost'
             }
         ]
     }

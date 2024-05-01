@@ -1,21 +1,25 @@
-import { INotice } from "@/models/notice";
+import { IEvent } from "@/models/event";
 import Image from "next/image";
 import Link from "next/link";
-import { FiCalendar, FiClock } from "react-icons/fi";
+import { FiCalendar } from "react-icons/fi";
 
-export function CardEvent({ notice }: { notice: INotice }) {
+export function CardEvent({ event }: { event: IEvent }) {
+    function createMarkup(content: string) {
+        return { __html: content.replaceAll('pt;', 'px;') };
+    }
+
     return (
-        <Link href={'/events/1213'} className="p-2 border transition-colors hover:border-gray-500 border-gray-300 flex flex-col max-lg:flex-row max-lg:gap-3">
-            <div className="max-lg:w-20">
-                <Image src={notice.image} alt="" width={300} height={300} className="w-full" />
+        <Link href={`/events/${event.id}`} className="p-2 border transition-colors hover:border-gray-500 border-gray-300 flex flex-col max-md:flex-row max-md:gap-3">
+            <div className="max-md:w-20 max-md:h-20 h-[220px] overflow-hidden relative">
+                {event.image && <Image src={process.env.NEXT_PUBLIC_URL_DEFAULT + event.image} alt="" fill objectFit="cover" className="w-full" />}
             </div>
             <div className="flex flex-col flex-1">
-                <h4 className="text-lg max-lg:text-base font-semibold text-gray-800 mt-2">{notice.title}</h4>
-                <p className="text-sm text-gray-800">{notice.introduction}</p>
+                <h4 className="text-lg max-lg:text-base font-semibold text-gray-800 mt-2">{event.name}</h4>
+                {event.description.startsWith("<") ? <div className="content-notice text-sm text-gray-800 line-clamp-3" dangerouslySetInnerHTML={createMarkup(event.description)} /> : <p className="whitespace-pre-wrap text-sm text-gray-800 line-clamp-3">{event.description}</p>}
                 <div className="flex justify-between items-center text-sm text-gray-800 mt-2">
                     <div className="flex gap-2 items-center text-amber-600">
-                        <FiCalendar />
-                        <span className="text-xs font-medium">De 24 de abril às 16h até 26 de abril às 16h</span>
+                        <FiCalendar size={20}/>
+                        <span className="text-xs font-medium flex-1">De 24 de abril à 26 de abril</span>
                     </div>
                 </div>
             </div>

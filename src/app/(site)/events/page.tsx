@@ -1,9 +1,11 @@
 import { CardEvent } from "@/components/cards/card-event";
 import { Title } from "@/components/typography/title";
-import { notices } from "@/models/notice";
+import { fetchData } from "@/helpers/fetch";
 import { FiChevronDown, FiFilter, FiSearch } from "react-icons/fi";
 
-export default function Events() {
+export default async function Events() {
+    const { data: events } = await fetchData('events', 0);
+
     return (
         <div className="flex-1 flex flex-col gap-6 w-full max-w-7xl mx-auto px-3">
             <Title text={"Eventos"} />
@@ -22,15 +24,13 @@ export default function Events() {
                     <input className="h-full w-full outline-none pl-10 placeholder:text-sm pr-3 text-ellipsis" placeholder="Buscar por nome do autor ou mensagem" />
                 </div>
             </div>
-            <div className="grid lg:grid-cols-4 gap-4">
-                <CardEvent notice={notices[0]} />
-                <CardEvent notice={notices[1]} />
-                <CardEvent notice={notices[2]} />
-                <CardEvent notice={notices[3]} />
-                <CardEvent notice={notices[0]} />
-                <CardEvent notice={notices[1]} />
-                <CardEvent notice={notices[2]} />
-                <CardEvent notice={notices[3]} />
+            <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {events.map((notice) =>
+                    <CardEvent
+                        key={notice.id}
+                        event={notice}
+                    />
+                )}
             </div>
         </div>
     )

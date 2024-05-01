@@ -9,6 +9,7 @@ export interface INotice {
     responsible?: any;
     church?: any;
     churchId?: number;
+    createdAt?: Date;
 }
 
 export const notices: INotice[] = [

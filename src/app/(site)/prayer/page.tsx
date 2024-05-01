@@ -1,11 +1,11 @@
 import { CardPrayer } from "@/components/cards/card-prayer";
-import { Label } from "@/components/typography/label";
-import { Span } from "@/components/typography/span";
 import { Title } from "@/components/typography/title";
+import { fetchData } from "@/helpers/fetch";
 import Link from "next/link";
-import { FiChevronDown, FiFilter, FiHeart, FiMail, FiSearch } from "react-icons/fi";
+import { FiChevronDown, FiFilter, FiSearch } from "react-icons/fi";
 
 export default async function PrayerPage() {
+    const {data: prayers} = await fetchData('prayers');
     return (
         <div className="flex-1 flex flex-col gap-6 w-full max-w-7xl mx-auto px-3">
             <Title text={"Mural de orações"} />
@@ -28,24 +28,7 @@ export default async function PrayerPage() {
                 <Link href={'/prayer/create'} className="h-10 min-w-[168px] bg-gray-800 border border-gray-800 text-white px-8 flex items-center justify-center">Fazer um pedido</Link>
             </div>
             <div className="grid lg:grid-cols-3 gap-6">
-                <CardPrayer />
-                <CardPrayer />
-                <CardPrayer />
-                <CardPrayer />
-                <CardPrayer />
-                <CardPrayer />
-                <CardPrayer />
-                <CardPrayer />
-                <CardPrayer />
-                <CardPrayer />
-                <CardPrayer />
-                <CardPrayer />
-                <CardPrayer />
-                <CardPrayer />
-                <CardPrayer />
-                <CardPrayer />
-                <CardPrayer />
-                <CardPrayer />
+                {prayers.map(item => <CardPrayer key={item} prayer={item}/>)}
             </div>
         </div>
     )

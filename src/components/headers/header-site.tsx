@@ -20,7 +20,7 @@ export function HeaderSite() {
                 <MenuHeader />
             </header>
             <header className="max-lg:hidden w-full h-28 bg-white fixed top-0 left-0 z-[9999] border-b">
-                <nav className="h-8 bg-indigo-700">
+                <nav className="h-8 bg-blue-700">
                     <div className="flex justify-between items-center h-full w-full max-w-7xl mx-auto px-3">
                         <div className="flex gap-6 text-sm text-white font-medium">
                             <div className="flex items-center gap-2">
@@ -45,12 +45,12 @@ export function HeaderSite() {
                         <Link href={'/'}>
                             <Image src="/assets/logo-icon.svg" alt="Logo" width={64} height={64} />
                         </Link>
-                        <Link href={'/'} className={`${path.startsWith('/') && path.endsWith('/') && 'font-medium text-indigo-500'}`}>Início</Link>
-                        <Link href={'/about'} className={`${path.startsWith('/about') && 'font-medium text-indigo-500'}`}>Igreja</Link>
+                        <Link href={'/'} className={`${path.startsWith('/') && path.endsWith('/') && 'font-medium text-blue-500'}`}>Início</Link>
+                        <Link href={'/about'} className={`${path.startsWith('/about') && 'font-medium text-blue-500'}`}>Igreja</Link>
                         <Link href={'/'}>Doação</Link>
-                        <Link href={'/'}>Ao vivo</Link>
-                        <Link href={'/prayer'} className={`${path.startsWith('/prayer') && 'font-medium text-indigo-500'}`}>Mural de orações</Link>
-                        <Link href={'/events'} className={`${path.startsWith('/events') && 'font-medium text-indigo-500'}`}>Eventos</Link>
+                        <Link href={'/news'} className={`${path.startsWith('/news') && 'font-medium text-blue-500'}`}>Notícias</Link>
+                        <Link href={'/events'} className={`${path.startsWith('/events') && 'font-medium text-blue-500'}`}>Eventos</Link>
+                        <Link href={'/prayer'} className={`${path.startsWith('/prayer') && 'font-medium text-blue-500'}`}>Mural de orações</Link>
                     </div>
                     <div className="flex gap-4">
                         <button className="text-gray-800">Entrar</button>

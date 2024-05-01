@@ -11,4 +11,5 @@ export interface IPrayer {
     church?: any; 
     user?: any; 
     userId?: number; 
+    createdAt?: Date;
 }

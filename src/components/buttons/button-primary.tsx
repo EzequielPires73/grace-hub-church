@@ -18,7 +18,7 @@ export function ButtonPrimary({ title, full, Icon, path, loading, ...options }: 
             <Link href={path} className={`
                 ${full ? 'w-full' : 'w-fit'}
                 h-12 transition-colors px-6 text-white font-medium text-base
-                bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700
+                bg-blue-600 hover:bg-blue-700 active:bg-blue-800
                 flex items-center justify-center gap-2
             `}>
                  {loading && <LoadingSvg color={'#fff'} show={loading} />}
@@ -31,7 +31,7 @@ export function ButtonPrimary({ title, full, Icon, path, loading, ...options }: 
             <button className={`
                 ${full ? 'w-full' : 'w-fit'}
                 h-12 transition-colors px-6 text-white font-medium text-base
-                bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700
+                bg-blue-600 hover:bg-blue-700 active:bg-blue-800
                 flex items-center justify-center gap-2
             `} {...options}>
                  {loading && <LoadingSvg color={'#fff'} show={loading} />}

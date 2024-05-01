@@ -20,7 +20,7 @@ export function TabsDefault({current, setCurrent, tabs}) {
                     <span
                         aria-hidden="true"
                         className={classNames(
-                            current == tabIdx ? 'bg-indigo-500' : 'bg-transparent',
+                            current == tabIdx ? 'bg-blue-500' : 'bg-transparent',
                             'absolute inset-x-0 bottom-0 h-0.5'
                         )}
                     />

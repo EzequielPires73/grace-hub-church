@@ -1,17 +1,20 @@
 import { FiHeart, FiMail } from "react-icons/fi";
 import { Label } from "../typography/label";
 import { Span } from "../typography/span";
+import { IPrayer } from "@/models/prayer";
 
-export function CardPrayer() {
+export function CardPrayer({prayer}: {prayer: IPrayer}) {
+    const date = new Date(prayer.createdAt);
+
     return (
         <div className="border border-gray-300">
             <div className="p-4 flex flex-col gap-1">
                 <div className="flex justify-between">
-                    <Label text={'Família'} />
-                    <Span text={'16 de abril de 2024'} />
+                    <Label text={prayer.reason} />
+                    <Span text={date.toLocaleDateString()} />
                 </div>
-                <p className="text-sm line-clamp-2 text-gray-600 font-light">Gostaria de dizer que estou em batalha quero sair dos vicios presciso de libertaçao cura pelos meus em casa tambem meus pai odair ivonete prescisa</p>
-                <span className="text-xs font-medium">Kemini Ferreira</span>
+                <p className="text-sm line-clamp-2 text-gray-600 font-light">{prayer.description}</p>
+                <span className="text-xs font-medium">{prayer.user.name}</span>
             </div>
             <div className="border-t border-gray-300 flex">
                 <button className="p-2 flex items-center justify-center gap-2 flex-1 border-r">
