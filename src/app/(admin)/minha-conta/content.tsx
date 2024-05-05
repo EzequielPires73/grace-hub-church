@@ -1,6 +1,6 @@
 'use client'
 
-import { setCookies } from "@/app/login/actions";
+import { setCookies } from "@/app/entrar/actions";
 import { ButtonDanger } from "@/components/buttons/button-danger";
 import { ButtonPrimary } from "@/components/buttons/button-primary";
 import { InputText } from "@/components/forms-components/input-text";

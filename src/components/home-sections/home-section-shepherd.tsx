@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function HomeSectionShepherd() {
     return (
-        <section className="min-h-[400px] max-md:py-10 relative" style={{
+        <section className="h-fit relative" style={{
             background: 'url(assets/bg-home.jpg)',
             backgroundSize: 'cover'
           }}>

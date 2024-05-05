@@ -7,8 +7,10 @@ import { FaFacebook, FaInstagram, FaTwitch, FaTwitter, FaYoutube } from "react-i
 import { FiMail, FiMenu, FiPhone } from "react-icons/fi";
 import { MenuHeader } from "../menus/menu-header";
 import { ButtonPrimary } from "../buttons/button-primary";
+import { IUser } from "@/models/users";
+import { UserWrapper } from "../user-wrapper";
 
-export function HeaderSite() {
+export function HeaderSite({ user }: { user?: IUser }) {
     const path = usePathname();
 
     return (
@@ -41,21 +43,24 @@ export function HeaderSite() {
                     </div>
                 </nav>
                 <nav className="w-full max-w-7xl h-20 mx-auto px-3 flex items-center justify-between max-md:justify-center relative">
-                    <div className="flex gap-6 items-center text-gray-800">
+                    <div className="flex gap-8 items-center text-gray-800">
                         <Link href={'/'}>
                             <Image src="/assets/logo-icon.svg" alt="Logo" width={64} height={64} />
                         </Link>
                         <Link href={'/'} className={`${path.startsWith('/') && path.endsWith('/') && 'font-medium text-blue-500'}`}>Início</Link>
                         <Link href={'/about'} className={`${path.startsWith('/about') && 'font-medium text-blue-500'}`}>Igreja</Link>
-                        <Link href={'/'}>Doação</Link>
+                        {/* <Link href={'/'}>Doação</Link>  */}
                         <Link href={'/news'} className={`${path.startsWith('/news') && 'font-medium text-blue-500'}`}>Notícias</Link>
                         <Link href={'/events'} className={`${path.startsWith('/events') && 'font-medium text-blue-500'}`}>Eventos</Link>
                         <Link href={'/prayer'} className={`${path.startsWith('/prayer') && 'font-medium text-blue-500'}`}>Mural de orações</Link>
                     </div>
-                    <div className="flex gap-4">
-                        <button className="text-gray-800">Entrar</button>
-                        <ButtonPrimary title="Criar conta" />
-                    </div>
+                    {user ?
+                        <UserWrapper user={user} church={user.church}/>
+                        :
+                        <div className="flex gap-4">
+                            <Link href={'/entrar'} className="text-gray-800 flex items-center">Entrar</Link>
+                            <ButtonPrimary title="Criar conta" />
+                        </div>}
                 </nav>
             </header>
         </>

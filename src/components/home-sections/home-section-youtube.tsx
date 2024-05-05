@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function HomeSectionYoutube() {
     return (
-        <section className="min-h-[400px] max-md:py-10 relative" style={{
+        <section className="min-h-[400px] relative" style={{
             background: 'url(assets/bg-home.jpg)',
             backgroundSize: 'cover'
           }}>

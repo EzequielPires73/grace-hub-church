@@ -3,7 +3,7 @@
 import { Airplay, ArrowDownWideNarrow, ArrowUpWideNarrow, Banknote, Bell, CalendarCheck, ChevronDown, ChevronUp, Church, Cog, DollarSign, Images, LayoutDashboard, LucideIcon, Menu, Newspaper, PieChart, School2, User, UserCog, Video, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import { UserWrapper } from "./user-wrapper";
+import { UserWrapper } from "./user-wrapper-2";
 import { usePathname } from "next/navigation";
 
 interface MenuProps {

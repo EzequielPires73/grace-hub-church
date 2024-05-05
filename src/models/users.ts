@@ -20,4 +20,5 @@ export interface IUser {
     type: string,
     address?: IAddress[] | IAddress;
     churchId?: string;
+    church?: any;
 }

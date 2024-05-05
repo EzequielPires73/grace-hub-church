@@ -2,6 +2,7 @@ import { FiHeart, FiMail } from "react-icons/fi";
 import { Label } from "../typography/label";
 import { Span } from "../typography/span";
 import { IPrayer } from "@/models/prayer";
+import { motiveOptions } from "@/utils/data";
 
 export function CardPrayer({prayer}: {prayer: IPrayer}) {
     const date = new Date(prayer.createdAt);
@@ -10,7 +11,7 @@ export function CardPrayer({prayer}: {prayer: IPrayer}) {
         <div className="border border-gray-300">
             <div className="p-4 flex flex-col gap-1">
                 <div className="flex justify-between">
-                    <Label text={prayer.reason} />
+                    <Label text={motiveOptions.find(item => item.enum == prayer.reason)?.name} />
                     <Span text={date.toLocaleDateString()} />
                 </div>
                 <p className="text-sm line-clamp-2 text-gray-600 font-light">{prayer.description}</p>

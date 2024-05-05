@@ -1,4 +1,5 @@
 import { HeaderSite } from "@/components/headers/header-site";
+import { cookies } from "next/headers";
 import Image from "next/image";
 
 export default function RootLayout({
@@ -6,9 +7,11 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const res = cookies().get('adcatalao.user');
+
     return (
         <div className="flex flex-col gap-6 min-h-screen pt-[136px] max-lg:pt-[104px]">
-            <HeaderSite />
+            <HeaderSite user={JSON.parse(res?.value)}/>
             {children}
             <footer className="bg-gray-900 py-4 px-3 gap-2 flex flex-col justify-center items-center">
                 <Image src={'/assets/logo-white.png'} alt="" width={80} height={80} />
