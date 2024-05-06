@@ -1,10 +1,11 @@
 import { CardChurch } from "@/components/cards/card-church";
-import { CardEvent } from "@/components/cards/card-event";
 import { Title } from "@/components/typography/title";
-import { notices } from "@/models/notice";
-import { FiChevronDown, FiFilter, FiSearch } from "react-icons/fi";
+import { fetchData } from "@/helpers/fetch";
+import { FiChevronDown, FiFilter } from "react-icons/fi";
 
-export default function CongregationsPage() {
+export default async function CongregationsPage() {
+    const {data} = await fetchData('churches', 0);
+
     return (
         <div className="flex-1 flex flex-col gap-6 w-full max-w-7xl mx-auto px-3">
             <Title text={"Congregrações"} />
@@ -20,10 +21,7 @@ export default function CongregationsPage() {
                 </div>
             </div>
             <div className="grid lg:grid-cols-4 gap-4">
-                <CardChurch district={'Sede'}/>
-                <CardChurch district={'Ipanema'}/>
-                <CardChurch district={'São João'}/>
-                <CardChurch district={'Vila Erondina'}/>
+                {data.map(item => <CardChurch key={item.id} church={item} />)}
             </div>
         </div>
     )

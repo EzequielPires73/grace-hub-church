@@ -17,3 +17,5 @@ export const motiveOptions: OptionSelectProps[] = [
     { id: 14, name: "Nação", enum: "nacao" },
     { id: 15, name: "Outro", enum: "outro" }
 ];
+
+export const activeData = [{name: 'Sim', enum: 'SIM', id: 1}, {name: 'Não', enum: 'NÃO', id: 2}];

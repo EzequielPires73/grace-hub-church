@@ -1,39 +1,28 @@
 import { ButtonIcon } from "@/components/buttons/button-icon";
 import { CardCult } from "@/components/cards/card-cult";
 import { Label } from "@/components/typography/label";
-import { Span } from "@/components/typography/span";
 import { SpanMedium } from "@/components/typography/span-medium";
 import { Title } from "@/components/typography/title";
+import { fetchData } from "@/helpers/fetch";
 import Image from "next/image";
 import Link from "next/link";
 import { FaEnvelope, FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa6";
-import { FiCalendar, FiClock, FiGlobe, FiMail, FiMapPin, FiPhone, FiShare } from "react-icons/fi";
+import { FiGlobe, FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 
-export default function NewsPage() {
+export default async function NewsPage({params}) {
+    const {data} = await fetchData(`churches/${params.id}`, 0);
+
     return (
         <div className="flex-1 flex flex-col gap-6 w-full max-w-[800px] px-3 mx-auto lg:py-6 mb-6">
-            <div className="w-full h-[248px] lg:h-[336px] relative rounded-lg overflow-hidden">
-                <Image src={'/assets/church.jpg'} alt="" fill objectFit="cover" />
-                <div className="absolute top-0 left-0 right-0 bottom-0 backdrop-blur-lg"></div>
-                <Image src={'/assets/church.jpg'} alt="" fill objectFit="contain" />
-            </div>
-            {/* <div className="w-full flex items-center justify-between gap-6">
-                <div className="flex gap-6 items-center text-sm text-gray-800">
-                    <div className="flex gap-2 items-center">
-                        <FiCalendar size={20} />
-                        8 de mar de 2024
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <FiClock size={20} />
-                        18:20
-                    </div>
+            {data?.logo &&
+                <div className="w-full h-[248px] lg:h-[336px] relative rounded-lg overflow-hidden">
+                    <Image src={process.env.NEXT_PUBLIC_URL_DEFAULT + data.logo} alt="" fill objectFit="cover" />
+                    <div className="absolute top-0 left-0 right-0 bottom-0 backdrop-blur-lg"></div>
+                    <Image src={process.env.NEXT_PUBLIC_URL_DEFAULT + data.logo} alt="" fill objectFit="contain" />
                 </div>
-                <button className="bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center text-white">
-                    <FiShare />
-                </button>
-            </div> */}
+            }
             <div className="flex flex-col gap-6">
-                <Title text={'AD Catalão - Campo Alegre de Goiás'} />
+                <Title text={data.name} />
                 <div className="flex flex-col gap-4">
                     <Link href='/' className="flex gap-2 items-center">
                         <FiPhone />

@@ -15,7 +15,7 @@ export function CardPrayer({prayer}: {prayer: IPrayer}) {
                     <Span text={date.toLocaleDateString()} />
                 </div>
                 <p className="text-sm line-clamp-2 text-gray-600 font-light">{prayer.description}</p>
-                <span className="text-xs font-medium">{prayer.user.name}</span>
+                <span className="text-xs font-medium">{prayer?.user?.name}</span>
             </div>
             <div className="border-t border-gray-300 flex">
                 <button className="p-2 flex items-center justify-center gap-2 flex-1 border-r">

@@ -22,9 +22,9 @@ export function UserWrapper({ user, church }: { user: IUser, church: IChurch }) 
     };
 
     const handleLogout = async () => {
-        await deleteCookies('gracehub.church');
-        await deleteCookies('gracehub.user');
-        await deleteCookies('gracehub.access_token');
+        await deleteCookies('adcatalao.church');
+        await deleteCookies('adcatalao.user');
+        await deleteCookies('adcatalao.access_token');
 
         router.refresh();
     }

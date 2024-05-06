@@ -5,7 +5,7 @@ import Link from "next/link";
 import { FiChevronDown, FiFilter, FiSearch } from "react-icons/fi";
 
 export default async function PrayerPage() {
-    const {data: prayers} = await fetchData('prayers');
+    const {data: prayers} = await fetchData('prayers', 0);
     return (
         <div className="flex-1 flex flex-col gap-6 w-full max-w-7xl mx-auto px-3">
             <Title text={"Mural de orações"} />
