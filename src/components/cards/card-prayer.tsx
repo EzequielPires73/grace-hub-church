@@ -8,7 +8,7 @@ export function CardPrayer({prayer}: {prayer: IPrayer}) {
     const date = new Date(prayer.createdAt);
 
     return (
-        <div className="border border-gray-300">
+        <div className="border border-gray-300 flex flex-col">
             <div className="p-4 flex flex-col gap-1">
                 <div className="flex justify-between">
                     <Label text={motiveOptions.find(item => item.enum == prayer.reason)?.name} />
@@ -17,7 +17,7 @@ export function CardPrayer({prayer}: {prayer: IPrayer}) {
                 <p className="text-sm line-clamp-2 text-gray-600 font-light">{prayer.description}</p>
                 <span className="text-xs font-medium">{prayer?.user?.name}</span>
             </div>
-            <div className="border-t border-gray-300 flex">
+            <div className="border-t border-gray-300 mt-auto flex">
                 <button className="p-2 flex items-center justify-center gap-2 flex-1 border-r">
                     <FiHeart />
                     <span className="text-sm font-medium">Orando</span>

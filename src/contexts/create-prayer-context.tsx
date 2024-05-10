@@ -37,7 +37,8 @@ export function CreatePrayerProvider({ children, prayer: initialPrayer, users, u
                 }
             }
         } catch (error) {
-            toast(error.response?.data?.error ?? error.message, {
+            console.log(error);
+            toast(error.response?.data?.error ?? error.response?.data?.message ?? error.message, {
                 type: 'error'
             });
         }
