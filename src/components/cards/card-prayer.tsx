@@ -21,7 +21,7 @@ export function CardPrayer({prayer}: {prayer: IPrayer}) {
                 <button className="p-2 flex items-center justify-center gap-2 flex-1 border-r">
                     <FiHeart />
                     <span className="text-sm font-medium">Orando</span>
-                    <span className="w-7 h-7 text-xs rounded-full bg-gray-800 flex items-center justify-center text-white">1</span>
+                    <span className="w-7 h-7 text-xs rounded-full bg-gray-800 flex items-center justify-center text-white">{prayer?.praying?.length ?? 0}</span>
                 </button>
                 <button className="p-2 flex items-center justify-center gap-2 flex-1">
                     <FiMail />

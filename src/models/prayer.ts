@@ -1,3 +1,5 @@
+import { IUser } from "./users";
+
 export interface IPrayer {
     id?: number;
     reason: string;
@@ -11,5 +13,6 @@ export interface IPrayer {
     church?: any; 
     user?: any; 
     userId?: number; 
+    praying?: IUser[];
     createdAt?: Date;
 }

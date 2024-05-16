@@ -9,7 +9,7 @@ export function HomeSectionShepherd() {
           }}>
             <section className="bg-gray-900/80 min-h-[400px] max-md:py-10 relative">
               <section className="h-full min-h-[400px] flex flex-wrap items-center gap-4 w-full max-w-7xl px-3 mx-auto">
-                <div className="min-h-[400px] flex-1 flex items-end justify-center h-full max-md:absolute max-md:bottom-0 max-md:opacity-20 max-md:-z-0">
+                <div className="hidden min-h-[400px] flex-1 lg:flex items-end justify-center h-full max-md:absolute max-md:bottom-0 max-md:opacity-20 max-md:-z-0">
                   <Image src={"/assets/pastores.png"} alt="" width={348} height={200} />
                 </div>
                 <div className="flex flex-col min-w-72 flex-1 text-white z-50">
