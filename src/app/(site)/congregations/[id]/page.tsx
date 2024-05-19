@@ -54,7 +54,7 @@ export default async function NewsPage({params}) {
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3790.73245791005!2d-47.9494642139159!3d-18.176234538636475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a6667404dc8d1f%3A0xe39f03729b22f5d!2sAssembleia%20de%20Deus%20Minist%C3%A9rio%20Madureira%20-%20Templo%20Central!5e0!3m2!1spt-BR!2sbr!4v1713394144579!5m2!1spt-BR!2sbr" width="full" height="300" loading="lazy"></iframe>
                 <div className="flex flex-col gap-2">
                     <Title text={'Programação da igreja'} />
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid lg:grid-cols-2 gap-4">
                         <div className="flex flex-col gap-2">
                             <Label text={'Segunda'} />
                             <div className="flex flex-col gap-4">

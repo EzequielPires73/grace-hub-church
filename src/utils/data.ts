@@ -19,3 +19,56 @@ export const motiveOptions: OptionSelectProps[] = [
 ];
 
 export const activeData = [{name: 'Sim', enum: 'SIM', id: 1}, {name: 'Não', enum: 'NÃO', id: 2}];
+
+export const positionData = [
+    {
+        "id": 10,
+        "name": "Pastor Presidente",
+        "enum": "PASTOR_PRESIDENTE"
+    },
+    {
+        "id": 1,
+        "name": "Pastor",
+        "enum": "PASTOR"
+    },
+    {
+        "id": 9,
+        "name": "Co-pastor",
+        "enum": "CO_PASTOR"
+    },    
+    {
+        "id": 2,
+        "name": "Diácono(a)",
+        "enum": "DIACONO"
+    },
+    {
+        "id": 3,
+        "name": "Líder de Departamento",
+        "enum": "LIDER_DEPARTAMENTO"
+    },
+    {
+        "id": 4,
+        "name": "Professor(a) de Escola Bíblica",
+        "enum": "PROFESSOR_ESCOLA_BIBLICA"
+    },
+    {
+        "id": 5,
+        "name": "Secretário(a)",
+        "enum": "SECRETARIO"
+    },
+    {
+        "id": 6,
+        "name": "Tesoureiro(a)",
+        "enum": "TESOUREIRO"
+    },
+    {
+        "id": 7,
+        "name": "Músico",
+        "enum": "MUSICO"
+    },
+    {
+        "id": 8,
+        "name": "Voluntário(a)",
+        "enum": "VOLUNTARIO"
+    }
+]

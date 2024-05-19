@@ -46,9 +46,9 @@ const Select = ({ onChange, label, value, onBlur, options, required, error, plac
 
     return (
         <div className="relative flex flex-col w-full gap-1">
-            <div className="flex gap-1">
+            <div className="flex gap-1 justify-between items-center">
                 {label && <label className='text-sm font-medium text-zinc-800'>{label}</label>}
-                {required && <span className="font-bold text-sm text-red-500">*</span>}
+                {required ? <span className="font-medium text-xs text-red-500">(obrigatório)</span> : <span className="font-normal text-xs text-zinc-500">(opcional)</span>}
             </div>
             <div className="relative flex flex-col w-full" ref={inputRef}>
                 <span

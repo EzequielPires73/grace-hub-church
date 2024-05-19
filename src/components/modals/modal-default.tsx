@@ -8,13 +8,15 @@ import { ButtonPrimary } from "../buttons/button-primary";
 
 interface Props {
     submit: () => void | Promise<void>;
+    validate?: () => boolean | Promise<boolean>;
     title: string;
-    buttonType?: 'primary' | 'secondary'; 
+    buttonType?: 'primary' | 'secondary';
     buttonTitle?: string;
     children?: any;
+    loading?: boolean;
 }
 
-export function ModalDefault({ submit, title, buttonTitle, children, buttonType }: Props) {
+export function ModalDefault({ submit, validate, title, buttonTitle, children, buttonType, loading }: Props) {
     const [showModal, setShowModal] = useState(false);
     const ref = useRef(null);
 
@@ -37,28 +39,28 @@ export function ModalDefault({ submit, title, buttonTitle, children, buttonType 
             {buttonType && buttonType == 'secondary' ? <ButtonSecondary title={buttonTitle} onClick={() => setShowModal(true)} /> : <ButtonPrimary title={buttonTitle} onClick={() => setShowModal(true)} />}
             {
                 showModal &&
-                <div className="fixed top-0 bottom-0 left-0 right-0 bg-black/50 flex items-center justify-center z-50">
-                    <div className="bg-white w-full max-w-md min-h-[500px] rounded-md" ref={ref}>
-                        <header className="h-16 bg-blue-500 rounded-t-md flex items-center justify-between px-3">
+                <div className="fixed top-0 bottom-0 left-0 right-0 bg-black/50 flex items-center justify-center z-[9999]">
+                    <div className="bg-white w-full max-w-md rounded-md flex flex-col max-lg:h-full max-lg:rounded-none" ref={ref}>
+                        <header className="h-16 bg-blue-500 rounded-t-md flex items-center justify-between px-3 max-lg:rounded-none">
                             <div className="flex items-center gap-3">
                                 <button onClick={() => setShowModal(false)} className="h-10 w-10 flex items-center justify-center bg-blue-600 rounded-md font-semibold text-white">
                                     <FiArrowLeft size={16} />
                                 </button>
                                 <span className="text-lg font-medium text-white">{title}</span>
                             </div>
-                            <button
-                                className="h-10 px-3 rounded-md bg-blue-600 text-white text-base font-medium"
-                                onClick={async () => { 
-                                    await submit();
-                                    setShowModal(false); 
-                                }}
-                            >
-                                Salvar
-                            </button>
                         </header>
-                        <div className="p-3 flex flex-col gap-4">
+                        <div className="p-3 flex-1 flex flex-col gap-4">
                             {children}
                         </div>
+                        <footer className="p-3 flex items-center gap-3">
+                            <ButtonSecondary title="Cancelar" full onClick={() => setShowModal(false)}/>
+                            <ButtonPrimary title="Confirmar" loading={loading} full onClick={async () => {
+                                if(validate && validate()) {
+                                    await submit();
+                                    setShowModal(false);
+                                }
+                            }} />
+                        </footer>
                     </div>
                 </div>
             }

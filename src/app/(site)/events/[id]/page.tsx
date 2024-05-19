@@ -1,12 +1,14 @@
-import { ButtonPrimary } from "@/components/buttons/button-primary";
+import { ModalCreatePresence } from "@/components/modals/modal-create-presence";
 import { Label } from "@/components/typography/label";
 import { Title } from "@/components/typography/title";
+import { formatDate } from "@/helpers/date";
 import { fetchData } from "@/helpers/fetch";
 import { IEvent } from "@/models/event";
 import Image from "next/image";
-import { FiCalendar, FiClock, FiShare } from "react-icons/fi";
+import { FiCalendar, FiShare } from "react-icons/fi";
 
 export default async function NewsPage({ params }) {
+    const { data } = await fetchData('churches?limit=30', 0);
     const { data: event }: { data: IEvent } = await fetchData(`events/${params.id}`, 0);
 
     function createMarkup(content: string) {
@@ -24,7 +26,7 @@ export default async function NewsPage({ params }) {
                 <div className="flex flex-col gap-3">
                     <Title text={event.name} />
                     <div className="flex items-center gap-2">
-                        <FiCalendar className="text-orange-600"/> 
+                        <FiCalendar className="text-orange-600" />
                         <Label text={'De 15 a 17 de agosto de 2024'} />
                     </div>
                 </div>
@@ -32,7 +34,22 @@ export default async function NewsPage({ params }) {
                     <FiShare />
                 </button>
             </div>
-            <ButtonPrimary title="Confirmar presença"/>
+            <div className="flex flex-col gap-4">
+                <Label text={'Horários do evento'}/>
+                <div className="grid lgÇgrid-cols-3">
+                    {event.schedules.map(item => (
+                        <div key={item.id} className="flex flex-col gap-1 p-4 bg-gray-100">
+                            <h4 className="text-base font-semibold">{item.description}</h4>
+                            <span className="text-sm">Data: {formatDate(new Date(item.date))}</span>
+                            <div className="flex gap-4 flex-wrap mb-2">
+                                <span className="text-sm">Início: <strong>{item.start}</strong></span>
+                                <span className="text-sm">Final: <strong>{item.end}</strong></span>
+                            </div>
+                            <ModalCreatePresence churches={data} schedule={item} />
+                        </div>
+                    ))}
+                </div>
+            </div>
             <p className="text-sm font-normal flex flex-col gap-2" dangerouslySetInnerHTML={createMarkup(event.description)} />
         </div>
     )

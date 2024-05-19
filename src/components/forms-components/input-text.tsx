@@ -20,9 +20,9 @@ export function InputText({ label, disabled, error, id, onBlur, onChange, placeh
     const [currentType, setCurrentType] = useState(type ?? 'text');
     return (
         <div className="flex flex-col gap-1 w-full">
-            <div className="flex gap-1">
+            <div className="flex gap-1 justify-between items-center">
                 <label className="text-sm font-medium text-zinc-800">{label}</label>
-                {required && <span className="font-bold text-sm text-red-500">*</span>}
+                {required ? <span className="font-medium text-xs text-red-500">(obrigatório)</span> : <span className="font-normal text-xs text-zinc-500">(opcional)</span>}
             </div>
             <div className="relative flex items-center">
                 <input

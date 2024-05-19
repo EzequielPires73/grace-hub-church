@@ -9,8 +9,8 @@ export function CardEvent({ event }: { event: IEvent }) {
     }
 
     return (
-        <Link href={`/events/${event.id}`} className="p-2 border transition-colors hover:border-gray-500 border-gray-300 flex flex-col max-md:flex-row max-md:gap-3">
-            <div className="max-md:w-20 max-md:h-20 h-[220px] overflow-hidden relative">
+        <Link href={`/events/${event.id}`} className="p-2 border transition-colors hover:border-gray-500 border-gray-300 flex flex-col">
+            <div className="h-[220px] overflow-hidden relative">
                 {event.image && <Image src={process.env.NEXT_PUBLIC_URL_DEFAULT + event.image} alt="" fill objectFit="cover" className="w-full" />}
             </div>
             <div className="flex flex-col flex-1">
