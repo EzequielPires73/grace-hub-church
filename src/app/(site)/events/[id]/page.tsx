@@ -24,13 +24,6 @@ export default async function NewsPage({ params }) {
                     <Image src={process.env.NEXT_PUBLIC_URL_DEFAULT + event.image} alt="" fill objectFit="contain" />
                 </div>
             }
-            {event.image &&
-                <div className="w-full h-[248px] lg:h-[336px] relative rounded-lg overflow-hidden">
-                    <Image src={process.env.NEXT_PUBLIC_URL_DEFAULT + event.image} alt="" fill objectFit="cover" />
-                    <div className="absolute top-0 left-0 right-0 bottom-0 backdrop-blur-lg"></div>
-                    <Image src={process.env.NEXT_PUBLIC_URL_DEFAULT + event.image} alt="" fill objectFit="contain" />
-                </div>
-            }
             <div className="w-full flex items-center justify-between gap-6">
                 <div className="flex flex-col gap-3">
                     <Title text={event.name} />
