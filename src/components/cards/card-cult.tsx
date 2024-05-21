@@ -36,7 +36,9 @@ export function CardCult({cult, weekDay}: {cult: ICult, weekDay: WeekDay}) {
 
     return (
         <div className="p-2 border transition-colors hover:border-gray-500 border-gray-300 flex gap-3 max-w-md">
-            <Image src={'/assets/image-04.png'} alt="" width={120} height={120} objectFit="cover" />
+           <div className="w-[120px] h-[120px] overflow-hidden relative">
+                {cult.image && <Image src={process.env.NEXT_PUBLIC_URL_DEFAULT + cult.image} alt="" fill objectFit="cover" className="w-full" />}
+            </div>
             <div className="flex flex-col gap-2">
                 <Label text={cult.title} />
                 <div className="flex gap-2 items-center text-amber-600">
