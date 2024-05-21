@@ -10,6 +10,9 @@ const nextConfig = {
             },
             {
                 hostname: 'api.omnigrace.me'
+            },
+            {
+                hostname: 'storage.googleapis.com'
             }
         ]
     }
