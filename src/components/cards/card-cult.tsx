@@ -43,7 +43,7 @@ export function CardCult({cult, weekDay}: {cult: ICult, weekDay: WeekDay}) {
                 <Label text={cult.title} />
                 <div className="flex gap-2 items-center text-amber-600">
                     <FiCalendar />
-                    <span className="text-xs font-medium">Segunda às {getTime()}</span>
+                    <span className="text-xs font-medium">{weekDay} às {getTime()}</span>
                 </div>
                 <Link href={'/congregations'} className="h-10 min-w-[168px] border border-gray-800 text-gray-800 px-8 flex items-center justify-center">Compartilhar</Link>
             </div>
