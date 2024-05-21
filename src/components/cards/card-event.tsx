@@ -1,3 +1,4 @@
+import { getImagePath } from "@/helpers/functions";
 import { IEvent } from "@/models/event";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,7 +12,7 @@ export function CardEvent({ event }: { event: IEvent }) {
     return (
         <Link href={`/events/${event.id}`} className="p-2 border transition-colors hover:border-gray-500 border-gray-300 flex flex-col">
             <div className="h-[220px] overflow-hidden relative">
-                {event.image && <Image src={process.env.NEXT_PUBLIC_URL_DEFAULT + event.image} alt="" fill objectFit="cover" className="w-full" />}
+                {event.image && <Image src={getImagePath(event.image)} alt="" fill objectFit="cover" className="w-full" />}
             </div>
             <div className="flex flex-col flex-1">
                 <h4 className="text-lg max-lg:text-base font-semibold text-gray-800 mt-2">{event.name}</h4>

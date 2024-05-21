@@ -4,6 +4,7 @@ import { Label } from "@/components/typography/label";
 import { SpanMedium } from "@/components/typography/span-medium";
 import { Title } from "@/components/typography/title";
 import { fetchData } from "@/helpers/fetch";
+import { getImagePath } from "@/helpers/functions";
 import Image from "next/image";
 import Link from "next/link";
 import { FaEnvelope, FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa6";
@@ -17,9 +18,9 @@ export default async function NewsPage({ params }) {
         <div className="flex-1 flex flex-col gap-6 w-full max-w-[800px] px-3 mx-auto lg:py-6 mb-6">
             {data?.logo &&
                 <div className="w-full h-[248px] lg:h-[336px] relative rounded-lg overflow-hidden">
-                    <Image src={process.env.NEXT_PUBLIC_URL_DEFAULT + data.logo} alt="" fill objectFit="cover" />
+                    <Image src={getImagePath(data.logo)} alt="" fill objectFit="cover" />
                     <div className="absolute top-0 left-0 right-0 bottom-0 backdrop-blur-lg"></div>
-                    <Image src={process.env.NEXT_PUBLIC_URL_DEFAULT + data.logo} alt="" fill objectFit="contain" />
+                    <Image src={getImagePath(data.logo)} alt="" fill objectFit="contain" />
                 </div>
             }
             <div className="flex flex-col gap-6">
