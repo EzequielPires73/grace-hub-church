@@ -13,8 +13,6 @@ export default async function NewsPage({ params }) {
     const { data } = await fetchData(`churches/${params.id}`, 0);
     const { data: cults } = await fetchData(`cults/weekly-schedule/${params.id}`, 0);
 
-    console.log(cults);
-
     return (
         <div className="flex-1 flex flex-col gap-6 w-full max-w-[800px] px-3 mx-auto lg:py-6 mb-6">
             {data?.logo &&
