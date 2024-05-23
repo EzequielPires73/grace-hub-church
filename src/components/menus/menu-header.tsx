@@ -2,8 +2,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
+import { UserWrapper } from "../user-wrapper";
+import { ButtonPrimary } from "../buttons/button-primary";
 
-export function MenuHeader() {
+export function MenuHeader({user}) {
     const path = usePathname();
     const [show, setShow] = useState(false);
     return (
@@ -44,10 +46,14 @@ export function MenuHeader() {
                         Mural de orações
                     </Link>
                     <div className="border-b"></div>
-                    <div className="flex flex-col gap-4">
-                        <button className="text-gray-800">Entrar</button>
-                        <button className="h-10 min-w-[168px] border border-gray-800 text-gray-800 px-8 flex items-center justify-center">Criar conta</button>
-                    </div>
+                    {user ?
+                        <UserWrapper user={user} church={user.church} />
+                        :
+                        <div className="flex flex-col items-center gap-4">
+                            <Link href={'/entrar'} className="text-gray-800 flex items-center">Entrar</Link>
+                            <ButtonPrimary title="Criar conta" full />
+                        </div>
+                    }
                 </aside>
             }
         </>

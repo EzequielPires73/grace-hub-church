@@ -26,7 +26,7 @@ export function HomeSectionYoutube() {
                     height: 202
                   }} src="https://www.youtube.com/embed/TcdnSo8GeSo?si=d9zyxn9ecAcaxbn0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
                 </div>
-                <Link href={'/'} className="h-10 min-w-[168px] border border-white text-white px-8 flex items-center justify-center">Assista mais</Link>
+                <Link href={'https://www.youtube.com/@tvadcatalao9418/streams'} className="h-10 min-w-[168px] border border-white text-white px-8 flex items-center justify-center">Assista mais</Link>
               </section>
             </section>
           </section>

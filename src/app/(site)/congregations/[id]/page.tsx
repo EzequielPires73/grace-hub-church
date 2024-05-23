@@ -17,7 +17,7 @@ export default async function NewsPage({ params }) {
     return (
         <div className="flex-1 flex flex-col gap-6 w-full max-w-[800px] px-3 mx-auto lg:py-6 mb-6">
             {data?.logo &&
-                <div className="w-full h-[248px] lg:h-[336px] relative rounded-lg overflow-hidden">
+                <div className="w-full h-[248px] lg:h-[336px] relative overflow-hidden">
                     <Image src={getImagePath(data.logo)} alt="" fill objectFit="cover" />
                     <div className="absolute top-0 left-0 right-0 bottom-0 backdrop-blur-lg"></div>
                     <Image src={getImagePath(data.logo)} alt="" fill objectFit="contain" />
@@ -54,74 +54,83 @@ export default async function NewsPage({ params }) {
                     </div>
                 </div>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3790.73245791005!2d-47.9494642139159!3d-18.176234538636475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a6667404dc8d1f%3A0xe39f03729b22f5d!2sAssembleia%20de%20Deus%20Minist%C3%A9rio%20Madureira%20-%20Templo%20Central!5e0!3m2!1spt-BR!2sbr!4v1713394144579!5m2!1spt-BR!2sbr" width="full" height="300" loading="lazy"></iframe>
-                <div className="flex flex-col gap-2">
-                    <Title text={'Programação da igreja'} />
-                    <div className="grid lg:grid-cols-2 gap-4">
-                        {
-                            cults?.segunda && cults?.segunda.length > 0 &&
-                            <div className="flex flex-col gap-2">
-                                <Label text={'Segunda-Feira'} />
-                                <div className="flex flex-col gap-4">
-                                    {cults?.segunda.map(item => <CardCult cult={item} weekDay={WeekDay.monday} />)}
+                {
+                cults?.segunda.length > 0 ||
+                cults?.terca.length > 0 ||
+                cults?.quarta.length > 0 ||
+                cults?.quinta.length > 0 ||
+                cults?.sexta.length > 0 ||
+                cults?.sabado.length > 0 ||
+                cults?.domingo.length > 0 ?
+                    <div className="flex flex-col gap-2">
+                        <Title text={'Programação da igreja'} />
+                        <div className="grid lg:grid-cols-2 gap-4">
+                            {
+                                cults?.segunda && cults?.segunda.length > 0 &&
+                                <div className="flex flex-col gap-2">
+                                    <Label text={'Segunda-Feira'} />
+                                    <div className="flex flex-col gap-4">
+                                        {cults?.segunda.map(item => <CardCult key={item.id} cult={item} weekDay={WeekDay.monday} />)}
+                                    </div>
                                 </div>
-                            </div>
-                        }
-                        {
-                            cults?.terca && cults?.terca.length > 0 &&
-                            <div className="flex flex-col gap-2">
-                                <Label text={'Terça-Feira'} />
-                                <div className="flex flex-col gap-4">
-                                    {cults?.terca.map(item => <CardCult cult={item} weekDay={WeekDay.tuesday} />)}
+                            }
+                            {
+                                cults?.terca && cults?.terca.length > 0 &&
+                                <div className="flex flex-col gap-2">
+                                    <Label text={'Terça-Feira'} />
+                                    <div className="flex flex-col gap-4">
+                                        {cults?.terca.map(item => <CardCult key={item.id} cult={item} weekDay={WeekDay.tuesday} />)}
+                                    </div>
                                 </div>
-                            </div>
-                        }
-                        {
-                            cults?.quarta && cults?.quarta.length > 0 &&
-                            <div className="flex flex-col gap-2">
-                                <Label text={'Quarta-Feira'} />
-                                <div className="flex flex-col gap-4">
-                                    {cults?.quarta.map(item => <CardCult cult={item} weekDay={WeekDay.wednesday} />)}
+                            }
+                            {
+                                cults?.quarta && cults?.quarta.length > 0 &&
+                                <div className="flex flex-col gap-2">
+                                    <Label text={'Quarta-Feira'} />
+                                    <div className="flex flex-col gap-4">
+                                        {cults?.quarta.map(item => <CardCult key={item.id} cult={item} weekDay={WeekDay.wednesday} />)}
+                                    </div>
                                 </div>
-                            </div>
-                        }
-                        {
-                            cults?.quinta && cults?.quinta.length > 0 &&
-                            <div className="flex flex-col gap-2">
-                                <Label text={'Quinta-Feira'} />
-                                <div className="flex flex-col gap-4">
-                                    {cults?.quinta.map(item => <CardCult cult={item} weekDay={WeekDay.thursday} />)}
+                            }
+                            {
+                                cults?.quinta && cults?.quinta.length > 0 &&
+                                <div className="flex flex-col gap-2">
+                                    <Label text={'Quinta-Feira'} />
+                                    <div className="flex flex-col gap-4">
+                                        {cults?.quinta.map(item => <CardCult key={item.id} cult={item} weekDay={WeekDay.thursday} />)}
+                                    </div>
                                 </div>
-                            </div>
-                        }
-                        {
-                            cults?.sexta && cults?.sexta.length > 0 &&
-                            <div className="flex flex-col gap-2">
-                                <Label text={'Sexta-Feira'} />
-                                <div className="flex flex-col gap-4">
-                                    {cults?.sexta.map(item => <CardCult cult={item} weekDay={WeekDay.friday} />)}
+                            }
+                            {
+                                cults?.sexta && cults?.sexta.length > 0 &&
+                                <div className="flex flex-col gap-2">
+                                    <Label text={'Sexta-Feira'} />
+                                    <div className="flex flex-col gap-4">
+                                        {cults?.sexta.map(item => <CardCult key={item.id} cult={item} weekDay={WeekDay.friday} />)}
+                                    </div>
                                 </div>
-                            </div>
-                        }
-                        {
-                            cults?.sabado && cults?.sabado.length > 0 &&
-                            <div className="flex flex-col gap-2">
-                                <Label text={'Sábado'} />
-                                <div className="flex flex-col gap-4">
-                                    {cults?.sabado.map(item => <CardCult cult={item} weekDay={WeekDay.saturday} />)}
+                            }
+                            {
+                                cults?.sabado && cults?.sabado.length > 0 &&
+                                <div className="flex flex-col gap-2">
+                                    <Label text={'Sábado'} />
+                                    <div className="flex flex-col gap-4">
+                                        {cults?.sabado.map(item => <CardCult key={item.id} cult={item} weekDay={WeekDay.saturday} />)}
+                                    </div>
                                 </div>
-                            </div>
-                        }
-                        {
-                            cults?.domingo && cults?.domingo.length > 0 &&
-                            <div className="flex flex-col gap-2">
-                                <Label text={'Domingo'} />
-                                <div className="flex flex-col gap-4">
-                                    {cults?.domingo.map(item => <CardCult cult={item} weekDay={WeekDay.sunday} />)}
+                            }
+                            {
+                                cults?.domingo && cults?.domingo.length > 0 &&
+                                <div className="flex flex-col gap-2">
+                                    <Label text={'Domingo'} />
+                                    <div className="flex flex-col gap-4">
+                                        {cults?.domingo.map(item => <CardCult key={item.id} cult={item} weekDay={WeekDay.sunday} />)}
+                                    </div>
                                 </div>
-                            </div>
-                        }
-                    </div>
-                </div>
+                            }
+                        </div>
+                    </div> : null
+                }
             </div>
         </div>
     )

@@ -42,8 +42,11 @@ export default function Login() {
     }
 
     return (
-        <main className="flex items-center justify-center w-full max-w-lg mx-auto h-full min-h-screen gap-6 flex-col">
-            <Image src="/assets/logo_v.png" alt="Logo" width={148} height={151} />
+        <main className="flex items-center justify-center w-full max-w-lg mx-auto px-3 h-full min-h-screen gap-6 flex-col">
+            <Link href={'/'}>
+                <Image src="/assets/logo_v.png" alt="Logo" width={120} height={151} />
+            </Link>
+            <div className="mt-6"></div>
             <InputText label="Email" placeholder="Insira seu email" required {...email} />
             <InputText label="Senha" placeholder="Insira sua senha" required type="password" {...password} />
             <div className="flex items-center justify-end w-full">

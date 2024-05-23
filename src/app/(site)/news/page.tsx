@@ -10,7 +10,7 @@ export default async function Events() {
     return (
         <div className="flex-1 flex flex-col gap-6 w-full max-w-7xl mx-auto px-3">
             <Title text={"Notícias e Publicações"} />
-            <div className="grid lg:grid-cols-4 gap-4">
+            {/* <div className="grid lg:grid-cols-4 gap-4">
                 <div className="w-full">
                     <button className="flex justify-between items-center h-10 w-full lg:max-w-80 px-3 border border-gray-300">
                         <div className="flex gap-2 items-center">
@@ -24,7 +24,10 @@ export default async function Events() {
                     <FiSearch className="absolute left-3" />
                     <input className="h-full w-full outline-none pl-10 placeholder:text-sm pr-3 text-ellipsis" placeholder="Buscar por nome do autor ou mensagem" />
                 </div>
-            </div>
+            </div> */}
+            {
+                notices.length == 0 && <span className="px-8 py-2 bg-gray-100 w-fit font-medium">Nenhum resultado encontrado.</span>
+            }
             <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {notices.map((notice) =>
                     <CardNotice

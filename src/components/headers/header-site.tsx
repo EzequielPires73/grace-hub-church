@@ -19,7 +19,7 @@ export function HeaderSite({ user }: { user?: IUser }) {
                 <Link href={'/'}>
                     <Image src="/assets/logo-icon.svg" alt="Logo" width={64} height={64} />
                 </Link>
-                <MenuHeader />
+                <MenuHeader user={user} />
             </header>
             <header className="max-lg:hidden w-full h-28 bg-white fixed top-0 left-0 z-[9999] border-b">
                 <nav className="h-8 bg-blue-700">
@@ -35,10 +35,22 @@ export function HeaderSite({ user }: { user?: IUser }) {
                             </div>
                         </div>
                         <ul className="text-white flex gap-4 max-lg:hidden">
-                            <li><FaTwitter size={16} /></li>
-                            <li><FaInstagram size={16} /></li>
-                            <li><FaFacebook size={16} /></li>
-                            <li><FaYoutube size={16} /></li>
+                            {/* <li><FaTwitter size={16} /></li> */}
+                            <li>
+                                <Link href={'https://www.instagram.com/adcatalao/'}>
+                                    <FaInstagram size={16} />
+                                </Link>
+                            </li>
+                            {/* <li>
+                                <Link href={''}>
+                                    <FaFacebook size={16} />
+                                </Link>
+                            </li> */}
+                            <li>
+                                <Link href={'https://www.youtube.com/channel/UCJFhfyUb7kh0PJINKHO3Prg'}>
+                                    <FaYoutube size={16} />
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                 </nav>
@@ -55,14 +67,15 @@ export function HeaderSite({ user }: { user?: IUser }) {
                         <Link href={'/prayer'} className={`${path.startsWith('/prayer') && 'font-medium text-blue-500'}`}>Mural de orações</Link>
                     </div>
                     {user ?
-                        <UserWrapper user={user} church={user.church}/>
+                        <UserWrapper user={user} church={user.church} />
                         :
                         <div className="flex gap-4">
                             <Link href={'/entrar'} className="text-gray-800 flex items-center">Entrar</Link>
                             <ButtonPrimary title="Criar conta" />
-                        </div>}
+                        </div>
+                    }
                 </nav>
-            </header>
+            </header >
         </>
     )
 }
