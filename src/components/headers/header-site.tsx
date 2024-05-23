@@ -37,17 +37,17 @@ export function HeaderSite({ user }: { user?: IUser }) {
                         <ul className="text-white flex gap-4 max-lg:hidden">
                             {/* <li><FaTwitter size={16} /></li> */}
                             <li>
-                                <Link href={'https://www.instagram.com/adcatalao/'}>
+                                <Link href={'https://www.instagram.com/adcatalao/'} target="_blank">
                                     <FaInstagram size={16} />
                                 </Link>
                             </li>
-                            {/* <li>
-                                <Link href={''}>
+                            <li>
+                                <Link href={'https://www.facebook.com/ADCatalao/'} target="_blank">
                                     <FaFacebook size={16} />
                                 </Link>
-                            </li> */}
+                            </li>
                             <li>
-                                <Link href={'https://www.youtube.com/channel/UCJFhfyUb7kh0PJINKHO3Prg'}>
+                                <Link href={'https://www.youtube.com/channel/UCJFhfyUb7kh0PJINKHO3Prg'} target="_blank">
                                     <FaYoutube size={16} />
                                 </Link>
                             </li>
