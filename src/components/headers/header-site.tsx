@@ -27,7 +27,7 @@ export function HeaderSite({ user }: { user?: IUser }) {
                         <div className="flex gap-6 text-sm text-white font-medium">
                             <div className="flex items-center gap-2">
                                 <FiPhone size={16} />
-                                <span>(64) 99626-8117</span>
+                                <span>(64) 3441-4477</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <FiMail size={16} />
