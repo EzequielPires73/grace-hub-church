@@ -6,3 +6,8 @@ export const getImagePath = (path: string) => {
     }
     return path?.startsWith('storage') ? `${process.env.NEXT_PUBLIC_URL_DEFAULT}${path}` : path;
 }
+
+export function roundToDecimalPlace(num: number, decimalPlaces: number): number {
+    const factor = Math.pow(10, decimalPlaces);
+    return Math.round(num * factor) / factor;
+}

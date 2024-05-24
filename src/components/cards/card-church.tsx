@@ -5,7 +5,7 @@ import { FiMapPin } from "react-icons/fi";
 
 export function CardChurch({ church }) {
     return (
-        <Link href={`/congregations/${church.id}`} className="p-2 border transition-colors hover:border-gray-500 border-gray-300 flex flex-col">
+        <Link href={`/congregacoes/${church.id}`} className="p-2 border transition-colors hover:border-gray-500 border-gray-300 flex flex-col">
             {church?.logo &&
                 <div className="w-full h-[220px] relative overflow-hidden">
                     <Image src={getImagePath(church.logo)} alt="" fill objectFit="cover" />

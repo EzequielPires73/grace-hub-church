@@ -21,28 +21,28 @@ export function MenuHeader({user}) {
                         Início
                     </Link>
                     <Link
-                        href={'/about'}
+                        href={'/igreja'}
                         onClick={() => setShow(!show)}
-                        className={`${path.startsWith('/about') && 'font-medium text-blue-500'}`}>
+                        className={`${path.startsWith('/igreja') && 'font-medium text-blue-500'}`}>
                         Igreja
                     </Link>
                     {/* <Link href={'/'}>Doação</Link>  */}
                     <Link
-                        href={'/news'}
+                        href={'/noticias'}
                         onClick={() => setShow(!show)}
-                        className={`${path.startsWith('/news') && 'font-medium text-blue-500'}`}>
+                        className={`${path.startsWith('/noticias') && 'font-medium text-blue-500'}`}>
                         Notícias
                     </Link>
                     <Link
-                        href={'/events'}
+                        href={'/eventos'}
                         onClick={() => setShow(!show)}
-                        className={`${path.startsWith('/events') && 'font-medium text-blue-500'}`}>
+                        className={`${path.startsWith('/eventos') && 'font-medium text-blue-500'}`}>
                         Eventos
                     </Link>
                     <Link
-                        href={'/prayer'}
+                        href={'/mural-oracoes'}
                         onClick={() => setShow(!show)}
-                        className={`${path.startsWith('/prayer') && 'font-medium text-blue-500'}`}>
+                        className={`${path.startsWith('/mural-oracoes') && 'font-medium text-blue-500'}`}>
                         Mural de orações
                     </Link>
                     <div className="border-b"></div>

@@ -9,7 +9,7 @@ export function HomeSectionPrayers() {
             </div>
             <h2 className="text-xl font-semibold text-gray-800 text-center uppercase">Mural de oração</h2>
             <span className="max-w-lg text-center">A oração sincera é o caminho mais puro para conversar com Deus. Abra seu coração, compartilhe seu pedido de oração e ore pelos outros no nosso mural virtual.</span>
-            <Link href={'/prayer/create'} className="h-10 min-w-[168px] border border-gray-800 text-gray-800 px-8 flex items-center justify-center">Fazer um pedido</Link>
+            <Link href={'/mural-oracoes/create'} className="h-10 min-w-[168px] border border-gray-800 text-gray-800 px-8 flex items-center justify-center">Fazer um pedido</Link>
           </section>
         </section>
     )

@@ -60,11 +60,11 @@ export function HeaderSite({ user }: { user?: IUser }) {
                             <Image src="/assets/logo-icon.svg" alt="Logo" width={64} height={64} />
                         </Link>
                         <Link href={'/'} className={`${path.startsWith('/') && path.endsWith('/') && 'font-medium text-blue-500'}`}>Início</Link>
-                        <Link href={'/about'} className={`${path.startsWith('/about') && 'font-medium text-blue-500'}`}>Igreja</Link>
+                        <Link href={'/igreja'} className={`${path.startsWith('/igreja') && 'font-medium text-blue-500'}`}>Igreja</Link>
                         {/* <Link href={'/'}>Doação</Link>  */}
-                        <Link href={'/news'} className={`${path.startsWith('/news') && 'font-medium text-blue-500'}`}>Notícias</Link>
-                        <Link href={'/events'} className={`${path.startsWith('/events') && 'font-medium text-blue-500'}`}>Eventos</Link>
-                        <Link href={'/prayer'} className={`${path.startsWith('/prayer') && 'font-medium text-blue-500'}`}>Mural de orações</Link>
+                        <Link href={'/noticias'} className={`${path.startsWith('/noticias') && 'font-medium text-blue-500'}`}>Notícias</Link>
+                        <Link href={'/eventos'} className={`${path.startsWith('/eventos') && 'font-medium text-blue-500'}`}>Eventos</Link>
+                        <Link href={'/mural-oracoes'} className={`${path.startsWith('/mural-oracoes') && 'font-medium text-blue-500'}`}>Mural de orações</Link>
                     </div>
                     {user ?
                         <UserWrapper user={user} church={user.church} />

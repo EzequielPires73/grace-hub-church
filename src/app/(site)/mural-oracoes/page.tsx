@@ -26,7 +26,7 @@ export default async function PrayerPage() {
                         <input className="h-full w-full outline-none pl-10 placeholder:text-sm pr-3 text-ellipsis" placeholder="Buscar por nome do autor ou mensagem" />
                     </div>
                 </div> */}
-                <Link href={'/prayer/create'} className="h-10 min-w-[168px] bg-gray-800 border border-gray-800 text-white px-8 flex items-center justify-center">Fazer um pedido</Link>
+                <Link href={'/mural-oracoes/create'} className="h-10 min-w-[168px] bg-gray-800 border border-gray-800 text-white px-8 flex items-center justify-center">Fazer um pedido</Link>
             </div>
             <div className="grid lg:grid-cols-3 gap-6">
                 {prayers.map(item => <CardPrayer key={item} prayer={item}/>)}

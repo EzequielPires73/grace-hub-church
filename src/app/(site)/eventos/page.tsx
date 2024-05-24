@@ -1,7 +1,6 @@
 import { CardEvent } from "@/components/cards/card-event";
 import { Title } from "@/components/typography/title";
 import { fetchData } from "@/helpers/fetch";
-import { FiChevronDown, FiFilter, FiSearch } from "react-icons/fi";
 
 export default async function Events() {
     const { data: events } = await fetchData('events', 0);

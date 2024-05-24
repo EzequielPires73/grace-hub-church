@@ -46,7 +46,7 @@ export function CardCult({cult, weekDay}: {cult: ICult, weekDay: WeekDay}) {
                     <FiCalendar />
                     <span className="text-xs font-medium">{weekDay} às {getTime()}</span>
                 </div>
-                <Link href={'/congregations'} className="h-10 min-w-[168px] border border-gray-800 text-gray-800 px-8 flex items-center justify-center">Compartilhar</Link>
+                <Link href={'/congregacoes'} className="h-10 min-w-[168px] border border-gray-800 text-gray-800 px-8 flex items-center justify-center">Compartilhar</Link>
             </div>
         </div>
     )

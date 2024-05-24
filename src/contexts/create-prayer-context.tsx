@@ -32,7 +32,7 @@ export function CreatePrayerProvider({ children, prayer: initialPrayer, users, u
                     toast('Oração criada com sucesso.');
                     if (prayer.image instanceof File) await uploadImage(res.data.id, prayer.image);
                     setTimeout(() => {
-                        router.push(`/prayer`);
+                        router.push(`/mural-oracoes`);
                     }, 2000)
                 }
             }
