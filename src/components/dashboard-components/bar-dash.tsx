@@ -111,7 +111,16 @@ export function CustomPieChart({ item, index }) {
         <div className='relative flex flex-col gap-4 bg-white border p-4'>
             <h4 className="text-xl font-semibold text-zinc-900">{index}º - {item.congregation.name}</h4>
             <Pie
-                options={options}
+                options={{...options, plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const percentage = context.dataset.data[context.dataIndex];
+                                return `${percentage}%`;
+                            }
+                        }
+                    }
+                }}}
                 data={data_bar_1}
             />
         </div>
