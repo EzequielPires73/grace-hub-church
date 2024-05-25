@@ -48,8 +48,8 @@ export const positionData = [
     },
     {
         "id": 6,
-        "name": "Diáconisa",
-        "enum": "Diáconisa"
+        "name": "Diaconisa",
+        "enum": "Diaconisa"
     },
     {
         "id": 7,
