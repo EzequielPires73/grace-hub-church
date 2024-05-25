@@ -1,10 +1,9 @@
 import { CardChurch } from "@/components/cards/card-church";
 import { Title } from "@/components/typography/title";
 import { fetchData } from "@/helpers/fetch";
-import { FiChevronDown, FiFilter } from "react-icons/fi";
 
 export default async function CongregationsPage() {
-    const {data} = await fetchData('churches?limit=30', 0);
+    const {data} = await fetchData('churches?limit=50', 0);
 
     return (
         <div className="flex-1 flex flex-col gap-6 w-full max-w-7xl mx-auto px-3">

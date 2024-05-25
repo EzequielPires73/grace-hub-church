@@ -9,7 +9,7 @@ import Image from "next/image";
 import { FiCalendar, FiShare } from "react-icons/fi";
 
 export default async function NewsPage({ params }) {
-    const { data } = await fetchData('churches?limit=30', 0);
+    const { data } = await fetchData('churches?limit=50', 0);
     const { data: event }: { data: IEvent } = await fetchData(`events/${params.id}`, 0);
 
     function createMarkup(content: string) {
