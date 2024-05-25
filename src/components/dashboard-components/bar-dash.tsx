@@ -43,8 +43,8 @@ export function BarDash({ results }) {
     const labels = results.map((item, index) => item.congregation.name.replace('AD Catalão - ', '').split(' ').slice(0, 3).join(' '));
     let expected = 0;
     let attended = 0;
-    
-    for(let i = 0; i < results.length; i++) {
+
+    for (let i = 0; i < results.length; i++) {
         expected = expected + results[i].expected;
         attended = attended + results[i].attended;
     }
@@ -129,6 +129,19 @@ export function CustomPieChart({ item, index }) {
         ],
     };
 
+    const data_bar: ChartData<'bar'> = {
+        labels: ['Esperado', 'Presentes'],
+        datasets: [
+            {
+                label: 'Presentes',
+                data: [item.attended],
+                borderColor: '#2563eb',
+                backgroundColor: '#2563eb',
+            },
+        ],
+    };
+
+
     return (
         <div className='relative flex flex-col gap-4 bg-white border p-4'>
             <h4 className="text-xl font-semibold text-zinc-900">{index}º - {item.congregation.name}</h4>
@@ -136,6 +149,10 @@ export function CustomPieChart({ item, index }) {
                 <span>Esperado: <strong>{item.expected}</strong></span>
                 <span className='text-blue-500'>Presentes: <strong>{item.attended}</strong></span>
             </div>
+            {/* <Bar
+                options={options}
+                data={data_bar}
+            /> */}
             <Pie
                 options={{
                     ...options, plugins: {
