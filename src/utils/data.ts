@@ -22,53 +22,103 @@ export const activeData = [{name: 'Sim', enum: 'SIM', id: 1}, {name: 'Não', enu
 
 export const positionData = [
     {
-        "id": 10,
-        "name": "Pastor Presidente",
-        "enum": "PASTOR_PRESIDENTE"
-    },
-    {
         "id": 1,
         "name": "Pastor",
         "enum": "PASTOR"
     },
     {
-        "id": 9,
-        "name": "Co-pastor",
-        "enum": "CO_PASTOR"
-    },    
-    {
         "id": 2,
-        "name": "Diácono(a)",
-        "enum": "DIACONO"
+        "name": "Pastora",
+        "enum": "PASTORa"
     },
     {
         "id": 3,
+        "name": "Co-pastor",
+        "enum": "CO_PASTOR"
+    },
+    {
+        "id": 4,
+        "name": "Presbítero",
+        "enum": "PRESBITERO"
+    },
+    {
+        "id": 5,
+        "name": "Diácono",
+        "enum": "DIACONO"
+    },
+    {
+        "id": 6,
+        "name": "Diáconisa",
+        "enum": "Diáconisa"
+    },
+    {
+        "id": 7,
+        "name": "Evangelista",
+        "enum": "Evangelista"
+    },
+    {
+        "id": 8,
+        "name": "Missionário",
+        "enum": "Missionário"
+    },
+    {
+        "id": 9,
+        "name": "Missionária",
+        "enum": "Missionária"
+    },
+    {
+        "id": 10,
         "name": "Líder de Departamento",
         "enum": "LIDER_DEPARTAMENTO"
     },
     {
-        "id": 4,
+        "id": 11,
         "name": "Professor(a) de Escola Bíblica",
         "enum": "PROFESSOR_ESCOLA_BIBLICA"
     },
     {
-        "id": 5,
+        "id": 12,
         "name": "Secretário(a)",
         "enum": "SECRETARIO"
     },
     {
-        "id": 6,
+        "id": 13,
         "name": "Tesoureiro(a)",
         "enum": "TESOUREIRO"
     },
     {
-        "id": 7,
-        "name": "Músico",
-        "enum": "MUSICO"
+        "id": 14,
+        "name": "Ministro de Louvor",
+        "enum": "MINISTRO_DE_LOUVOR"
     },
     {
-        "id": 8,
+        "id": 15,
         "name": "Voluntário(a)",
         "enum": "VOLUNTARIO"
+    },
+    {
+        "id": 16,
+        "name": "Membro",
+        "enum": "Membro"
+    },
+    {
+        "id": 17,
+        "name": "Auxiliar",
+        "enum": "Auxiliar"
+    },
+    {
+        "id": 18,
+        "name": "Cooperador",
+        "enum": "Cooperador"
+    },
+    {
+        "id": 19,
+        "name": "Congregado",
+        "enum": "Congregado"
+    },
+    {
+        "id": 20,
+        "name": "Migração",
+        "enum": "Migração"
     }
 ]
