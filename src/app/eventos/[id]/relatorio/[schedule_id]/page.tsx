@@ -43,7 +43,7 @@ export default async function ReportScheduleEventPage({params}) {
                     <span className="px-3 py-8 bg-white/20 text-2xl font-medium text-white flex items-center justify-center">{data[2].percentage > 100 ? 'Mais de 100% de presença dos membros.' : getValue(roundToDecimalPlace(data[2].percentage, 1)) + '% de presença dos membros.'}</span>
                 </div>
             </div>
-            <div className="w-full max-w-7xl px-3 mx-auto py-6">
+            <div className="px-4">
                 <BarDash results={data}/>
             </div>
         </div>

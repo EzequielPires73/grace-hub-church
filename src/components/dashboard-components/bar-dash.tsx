@@ -40,7 +40,7 @@ export const options = {
 };
 
 export function BarDash({ results }) {
-    const labels = results.slice(0, 5).map((item, index) => index < 10 ? item.congregation.name.replace('AD Catalão - ', '').split(' ').slice(0, 3).join(' ') : null);
+    const labels = results.map((item, index) => item.congregation.name.replace('AD Catalão - ', '').split(' ').slice(0, 3).join(' '));
     let expected = 0;
     let attended = 0;
     
@@ -54,13 +54,13 @@ export function BarDash({ results }) {
         datasets: [
             {
                 label: 'Esperado',
-                data: results.map((item, index) => index < 10 ? item.expected : null),
+                data: results.map((item, index) => item.expected),
                 borderColor: 'rgb(255, 99, 132)',
                 backgroundColor: 'rgba(255, 99, 132)',
             },
             {
                 label: 'Presentes',
-                data: results.map((item, index) => index < 10 ? item.attended : null),
+                data: results.map((item, index) => item.attended),
                 borderColor: '#2563eb',
                 backgroundColor: '#2563eb',
             },
