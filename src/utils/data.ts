@@ -24,12 +24,12 @@ export const positionData = [
     {
         "id": 1,
         "name": "Pastor",
-        "enum": "PASTOR"
+        "enum": "Pastor"
     },
     {
         "id": 2,
         "name": "Pastora",
-        "enum": "PASTORa"
+        "enum": "Pastora"
     },
     {
         "id": 3,
@@ -39,12 +39,12 @@ export const positionData = [
     {
         "id": 4,
         "name": "Presbítero",
-        "enum": "PRESBITERO"
+        "enum": "Presbítero"
     },
     {
         "id": 5,
         "name": "Diácono",
-        "enum": "DIACONO"
+        "enum": "Diácono"
     },
     {
         "id": 6,
@@ -69,32 +69,32 @@ export const positionData = [
     {
         "id": 10,
         "name": "Líder de Departamento",
-        "enum": "LIDER_DEPARTAMENTO"
+        "enum": "Líder de Departamento"
     },
     {
         "id": 11,
         "name": "Professor(a) de Escola Bíblica",
-        "enum": "PROFESSOR_ESCOLA_BIBLICA"
+        "enum": "Professor(a) de Escola Bíblica"
     },
     {
         "id": 12,
         "name": "Secretário(a)",
-        "enum": "SECRETARIO"
+        "enum": "Secretário(a)"
     },
     {
         "id": 13,
         "name": "Tesoureiro(a)",
-        "enum": "TESOUREIRO"
+        "enum": "Tesoureiro(a)"
     },
     {
         "id": 14,
         "name": "Ministro de Louvor",
-        "enum": "MINISTRO_DE_LOUVOR"
+        "enum": "Ministro de Louvor"
     },
     {
         "id": 15,
         "name": "Voluntário(a)",
-        "enum": "VOLUNTARIO"
+        "enum": "Voluntário(a)"
     },
     {
         "id": 16,
