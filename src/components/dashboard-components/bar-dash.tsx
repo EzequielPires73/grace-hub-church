@@ -113,7 +113,7 @@ export function CustomPieChart({ item, index }) {
         } else if (value > 100) {
             return 100;
         } else {
-            return value;
+            return roundToDecimalPlace(value, 1);
         }
     }
 
@@ -121,7 +121,7 @@ export function CustomPieChart({ item, index }) {
         labels: ['Ausentes', 'Presentes'],
         datasets: [
             {
-                data: [getValue(roundToDecimalPlace(100 - item.percentage, 1)), getValue(item.percentage),],
+                data: [getValue(100 - item.percentage), getValue(item.percentage),],
 
                 borderColor: ['#fff', '#fff'],
                 backgroundColor: ['rgba(255, 99, 132)', '#2563eb'],
@@ -143,7 +143,7 @@ export function CustomPieChart({ item, index }) {
                             callbacks: {
                                 label: function (context) {
                                     const percentage = context.dataset.data[context.dataIndex];
-                                    return `${percentage}%`;
+                                    return `${getValue(percentage)}%`;
                                 }
                             }
                         }
