@@ -47,7 +47,7 @@ export function BarDash({ results }) {
         datasets: [
             {
                 label: 'Ausentes',
-                data: results.map((item, index) => index < 10 ? item.expected : null),
+                data: results.map((item, index) => index < 10 ? item.expected - item.attended : null),
                 borderColor: 'rgb(255, 99, 132)',
                 backgroundColor: 'rgba(255, 99, 132)',
             },
