@@ -202,7 +202,7 @@ export function CustomPieChart({ item, index }) {
             <ButtonPrimary title='Ver membros presentes' onClick={() => setShow(true)} />
             {show &&
                 <div className="fixed top-0 bottom-0 left-0 right-0 bg-black/50 flex items-center justify-center z-[9999]">
-                    <div className="bg-white w-full max-w-7xl rounded-md flex flex-col h-[80vh] max-lg:rounded-none" ref={ref}>
+                    <div className="bg-white w-full max-w-7xl rounded-md flex flex-col h-[80vh] max-lg:h-screen max-lg:rounded-none" ref={ref}>
                         <header className="h-16 bg-blue-500 rounded-t-md flex items-center justify-between px-3 max-lg:rounded-none">
                             <div className="flex items-center gap-3">
                                 <button onClick={() => setShow(false)} className="h-10 w-10 flex items-center justify-center bg-blue-600 rounded-md font-semibold text-white">
