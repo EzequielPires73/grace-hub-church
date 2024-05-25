@@ -88,7 +88,7 @@ export function BarDash({ results }) {
                 />
             </div> */}
             <div className='grid lg:grid-cols-3 gap-6'>
-                {results.map((item, index) => <CustomPieChart item={item} index={index+1} />)}
+                {results.filter(item => item.id != 659181).map((item, index) => <CustomPieChart item={item} index={index+1} />)}
             </div>
         </div>
     )
