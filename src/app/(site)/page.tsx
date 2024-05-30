@@ -2,6 +2,7 @@ import { HomeSectionLive } from "@/components/home-sections/home-section-live";
 import { HomeSectionLocations } from "@/components/home-sections/home-section-locations";
 import { HomeSectionNotices } from "@/components/home-sections/home-section-notices";
 import { HomeSectionPrayers } from "@/components/home-sections/home-section-prayers";
+import HomeSectionRadio from "@/components/home-sections/home-section-radio";
 import { HomeSectionShepherd } from "@/components/home-sections/home-section-shepherd";
 import { HomeSectionYoutube } from "@/components/home-sections/home-section-youtube";
 import { fetchData } from "@/helpers/fetch";
@@ -17,6 +18,7 @@ export default async function Home() {
         <Image src={'/assets/banner-home.png'} alt="" width={1310} height={600} />
       </section>
       <section>
+        <HomeSectionRadio />
         <HomeSectionLive />
         <HomeSectionShepherd />
         <HomeSectionNotices notices={notices} />
