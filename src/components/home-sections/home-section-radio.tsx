@@ -23,7 +23,7 @@ const HomeSectionRadio = () => {
   }
 
   return (
-    <div>
+    <div className='hidden items-start justify-center gap-4 pb-8'>
       <button onClick={handlePlay}><PlayCircle /></button>
       <button><StopCircle /></button>
     </div>

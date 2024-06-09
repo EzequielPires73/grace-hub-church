@@ -3,10 +3,10 @@ import Link from "next/link";
 export function HomeSectionYoutube() {
   return (
     <section className="min-h-[400px] relative" style={{
-      background: 'url(assets/bg-home.jpg)',
+      background: 'url(assets/background-home.jpg)',
       backgroundSize: 'cover'
     }}>
-      <section className="bg-gray-900/80">
+      <section className="bg-gray-900/60">
         <section className="h-full min-h-[400px] py-10 flex flex-col justify-center items-center gap-6 w-full max-w-7xl px-3 mx-auto">
           <h2 className="text-xl font-semibold text-white text-center">CONHEÇA O CANAL DO YOUTUBE</h2>
           <div className="w-full flex flex-wrap justify-center max-md:flex-wrap gap-6">
