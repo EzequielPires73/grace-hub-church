@@ -10,7 +10,7 @@ export default function RootLayout({
     const res = cookies().get('adcatalao.user');
 
     return (
-        <div className="flex flex-col gap-6 min-h-screen pt-[136px] max-lg:pt-[104px]">
+        <div className="flex flex-col gap-6 min-h-screen pt-24 max-lg:pt-[104px]">
             <HeaderSite user={res?.value && JSON.parse(res?.value)}/>
             {children}
             <footer className="bg-gray-900 py-4 px-3 gap-2 flex flex-col justify-center items-center">
