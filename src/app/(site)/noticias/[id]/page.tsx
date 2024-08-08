@@ -1,5 +1,4 @@
-import { Label } from "@/components/typography/label";
-import { Span } from "@/components/typography/span";
+import { ButtonShare } from "@/components/buttons/button-shared";
 import { Title } from "@/components/typography/title";
 import { fetchData } from "@/helpers/fetch";
 import { getImagePath } from "@/helpers/functions";
@@ -10,6 +9,7 @@ import { FiCalendar, FiClock, FiShare } from "react-icons/fi";
 export default async function NewsPage({ params }) {
     const { data: notice }: { data: INotice } = await fetchData(`notices/${params.id}`, 0);
     const date = new Date(notice.createdAt).toLocaleDateString();
+    const time = new Date(notice.createdAt).toLocaleTimeString();
 
     function createMarkup(content: string) {
         return { __html: content.replaceAll('pt;', 'px;') };
@@ -32,16 +32,15 @@ export default async function NewsPage({ params }) {
                     </div>
                     <div className="flex items-center gap-2">
                         <FiClock size={20} />
-                        18:20
+                        <span>{time.split(':')[0]}:{time.split(':')[1]}</span>
                     </div>
                 </div>
-                <button className="bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center text-white">
-                    <FiShare />
-                </button>
+                <ButtonShare title={notice.title} url={`https://adcatalao.vercel.app/noticias/${notice.id}`} />
             </div>
             <div className="flex flex-col gap-3">
                 <Title text={notice.title} />
-                <p className="text-sm font-normal flex flex-col gap-2" dangerouslySetInnerHTML={createMarkup(notice.content)} />
+                <p className="text-sm font-normal flex flex-col gap-2">{notice.introduction}</p>
+                {/* <p className="text-sm font-normal flex flex-col gap-2" dangerouslySetInnerHTML={createMarkup(notice.content)} /> */}
             </div>
         </div>
     )

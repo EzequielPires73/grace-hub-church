@@ -1,3 +1,4 @@
+import { formatDate } from "@/helpers/date";
 import { getImagePath } from "@/helpers/functions";
 import { INotice } from "@/models/notice";
 import Image from "next/image";
@@ -5,9 +6,11 @@ import Link from "next/link";
 import { FiCalendar, FiClock } from "react-icons/fi";
 
 export function CardNotice({ notice }: { notice: INotice }) {
+    const time = new Date(notice.createdAt).toLocaleTimeString();
+    
     return (
         <Link href={`/noticias/${notice.id}`} className="p-2 border transition-colors hover:border-gray-500 border-gray-300 flex flex-col max-lg:flex-row max-lg:gap-3">
-            <div className="max-md:w-20 max-md:h-20 h-[220px] overflow-hidden relative">
+            <div className="max-md:w-20 max-md:h-20 h-[300px] overflow-hidden relative">
                 {notice.image && <Image src={getImagePath(notice.image)} alt="" fill objectFit="cover" className="w-full" />}
             </div>
             <div className="flex flex-col flex-1">
@@ -16,11 +19,11 @@ export function CardNotice({ notice }: { notice: INotice }) {
                 <div className="flex justify-between items-center text-sm text-gray-800 mt-2">
                     <div className="flex gap-2 items-center">
                         <FiCalendar />
-                        8 de mar de 2024
+                         {formatDate(new Date(notice.createdAt))}
                     </div>
                     <div className="flex items-center gap-2">
                         <FiClock />
-                        18:20
+                        <span>{time.split(':')[0]}:{time.split(':')[1]}</span>
                     </div>
                 </div>
             </div>
