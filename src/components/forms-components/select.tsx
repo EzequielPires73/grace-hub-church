@@ -52,7 +52,7 @@ const Select = ({ onChange, label, value, onBlur, options, required, error, plac
             </div>
             <div className="relative flex flex-col w-full" ref={inputRef}>
                 <span
-                    className={`flex items-center cursor-pointer w-full px-4 py-2 border bg-white focus:outline-none focus:border-blue-500 ${isOpen && 'border-blue-600'}`}
+                    className={`flex items-center cursor-pointer w-full px-4 h-14 bg-gray-100 focus:outline-none focus:border-blue-500 ${isOpen && 'border-blue-600'}`}
                     onClick={() => setIsOpen(true)}
                 >
                     {value?.name ?
@@ -61,7 +61,7 @@ const Select = ({ onChange, label, value, onBlur, options, required, error, plac
                         >
                             {value?.name}
                         </span> :
-                        <span className="w-full focus:outline-none h-8 flex items-center text-gray-400 text-sm font-normal">{placeholder ?? 'Escolha um valor'}</span>
+                        <span className="w-full focus:outline-none h-8 flex items-center text-gray-500 text-sm font-normal">{placeholder ?? 'Escolha um valor'}</span>
                     }
                     {value?.name && <button className='mr-2' onClick={() => {
                         onChange(null)
