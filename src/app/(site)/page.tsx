@@ -13,16 +13,18 @@ export default async function Home() {
   const { data: notices } = await fetchData('notices', 0);
 
   return (
-    <main className="flex flex-col gap-6">
+    <main className="flex flex-col gap-6 ">
       <section>
-        <div className="relative w-full h-[calc(100vh-96px)] flex justify-center">
-          <Image src={'/assets/bg-home-4.jpg'} alt="" fill objectFit="cover" />
-          <button className="absolute bottom-4 border border-white text-white p-2">
-            <FaArrowDown />
-          </button>
+        <div className="bg-background-aux flex flex-col">
+          <div className="relative w-full max-md:h-[calc(100vh-80px)] h-[calc(100vh-96px)] flex justify-center">
+            <Image src={'/assets/bg-home-4.jpg'} alt="" fill objectFit="cover" />
+            <button className="absolute bottom-4 border border-white text-white p-2">
+              <FaArrowDown />
+            </button>
+          </div>
+          <HomeSectionRadio />
+          <HomeSectionLive />
         </div>
-        <HomeSectionRadio />
-        <HomeSectionLive />
         <HomeSectionShepherd />
         <HomeSectionNotices notices={notices} />
         <HomeSectionPrayers />

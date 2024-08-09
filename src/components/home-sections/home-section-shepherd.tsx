@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function HomeSectionShepherd() {
   return (
-    <section className="h-fit relative">
+    <section className="h-fit relative bg-white">
       <section className="min-h-[400px] max-md:py-10 relative">
         <section className="h-full min-h-[400px] flex flex-wrap items-center gap-4 w-full max-w-7xl px-3 mx-auto">
           <Image src={"/assets/pastores.png"} alt="" width={348} height={200} />
