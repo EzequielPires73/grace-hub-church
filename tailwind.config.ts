@@ -14,9 +14,7 @@ const config: Config = {
         'background-card': '#25262d',
       },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-linear": "linear-gradient(rgba(1, 1, 1, .5) 0%, rgba(1, 1, 1, .9) 80%, #010101 100%);",
       },
     },
   },

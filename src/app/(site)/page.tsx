@@ -7,6 +7,7 @@ import { HomeSectionShepherd } from "@/components/home-sections/home-section-she
 import { HomeSectionYoutube } from "@/components/home-sections/home-section-youtube";
 import { fetchData } from "@/helpers/fetch";
 import Image from "next/image";
+import Link from "next/link";
 import { FaArrowDown } from "react-icons/fa6";
 
 export default async function Home() {
@@ -17,7 +18,14 @@ export default async function Home() {
       <section>
         <div className="bg-background-aux flex flex-col">
           <div className="relative w-full max-md:h-[calc(100vh-80px)] h-[calc(100vh-96px)] flex justify-center">
-            <Image src={'/assets/bg-home-4.jpg'} alt="" fill objectFit="cover" />
+            <Image src={'/assets/bg-home-4.png'} alt="" fill objectFit="cover" />
+            <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-linear flex flex-col items-center justify-center text-center">
+              <h1 className="text-white text-6xl font-semibold">Bem-vindo à Família AD Catalão!</h1>
+              <h2 className="text-white text-3xl font-light mt-4">Junte-se a nós em uma jornada de fé, amor e comunidade.</h2>
+              <Link href={'/igreja'} className="h-14 min-w-[168px] border bg-white hover:bg-gray-100 active::bg-gray-200 transition-colors text-gray-800 px-12 flex items-center justify-center gap-4 mt-4">
+                Saiba mais
+              </Link>
+            </div>
             <button className="absolute bottom-4 border border-white text-white p-2">
               <FaArrowDown />
             </button>

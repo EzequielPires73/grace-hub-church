@@ -7,8 +7,12 @@ import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa6";
 import { FiMenu } from "react-icons/fi";
 import { MenuHeader } from "../menus/menu-header";
 import { IUser } from "@/models/users";
+import { useState } from "react";
 
 export function HeaderSite({ user }: { user?: IUser }) {
+    const [showAside, setShowAside] = useState(false);
+    const path = usePathname();
+
     return (
         <>
             <header className="min-lg:hidden h-20 bg-white border-b fixed w-full top-0 flex justify-between items-center px-3 z-[9999]">
@@ -19,8 +23,8 @@ export function HeaderSite({ user }: { user?: IUser }) {
             </header>
             <header className="max-lg:hidden w-full bg-white fixed top-0 left-0 z-[9999] shadow">
                 <nav className="w-full max-w-7xl h-24 mx-auto px-3 grid grid-cols-12">
-                    <button className="col-span-2">
-                        <FiMenu size={36} />
+                    <button className="col-span-2 flex items-center justify-start">
+                        <MenuHeader user={user} />
                     </button>
                     <Link href={'/'} className="col-span-8 flex items-center justify-center">
                         <Image src="/assets/logo-icon.svg" alt="Logo" width={80} height={80} />

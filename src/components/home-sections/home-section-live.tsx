@@ -12,7 +12,7 @@ export function HomeSectionLive() {
             <span className="text-sm text-white/90 text-center">PRÓXIMA REUNIÃO: DOMINGO ÀS 18:30H</span>
           </div>
           <div className="flex max-md:flex-col gap-4">
-            <Link href={'/'} className="h-10 min-w-[168px] border border-white text-white px-8 flex items-center justify-center gap-4">
+            <Link href={'https://www.youtube.com/@tvadcatalao9418/streams'} target="_blank" className="h-10 min-w-[168px] border border-white text-white px-8 flex items-center justify-center gap-4">
               <FaYoutube size={24} />
               Assista ao vivo
             </Link>
