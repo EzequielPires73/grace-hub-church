@@ -22,10 +22,10 @@ export function HeaderSite({ user }: { user?: IUser }) {
                 <MenuHeader user={user} />
             </header>
             <header className="max-lg:hidden w-full bg-white fixed top-0 left-0 z-[9999] shadow">
-                <nav className="w-full max-w-7xl h-24 mx-auto px-3 grid grid-cols-12">
-                    <button className="col-span-2 flex items-center justify-start">
+                <nav className="w-full max-w-7xl h-24 mx-auto px-3 flex items-center justify-between">
+                    <div className="col-span-2 flex items-center justify-start">
                         <MenuHeader user={user} />
-                    </button>
+                    </div>
                     <Link href={'/'} className="col-span-8 flex items-center justify-center">
                         <Image src="/assets/logo-icon.svg" alt="Logo" width={80} height={80} />
                     </Link>

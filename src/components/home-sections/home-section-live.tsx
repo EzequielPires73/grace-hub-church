@@ -3,7 +3,7 @@ import { FaEnvelope, FaFacebook, FaInstagram, FaMessage, FaTwitter, FaWhatsapp, 
 
 export function HomeSectionLive() {
   return (
-    <section className="bg-background-aux min-h-[400px] py-10">
+    <section className="bg-background-aux min-h-[400px] py-10" id="section-live">
       <section className="h-full flex flex-col items-center flex-wrap gap-6 w-full max-w-7xl px-3 mx-auto">
         <iframe className="w-full max-w-[500px] h-[220px] lg:h-[315px]" src="https://www.youtube.com/embed/vyDMGdJjANY?si=FRA3UZ0aSR9xZyLT" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
         <div className="flex flex-col items-center flex-1 gap-4">

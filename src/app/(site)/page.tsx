@@ -26,9 +26,9 @@ export default async function Home() {
                 Saiba mais
               </Link>
             </div>
-            <button className="absolute bottom-4 border border-white text-white p-2">
+            <Link href={'#section-live'} className="absolute bottom-4 border border-white text-white p-2">
               <FaArrowDown />
-            </button>
+            </Link>
           </div>
           <HomeSectionRadio />
           <HomeSectionLive />

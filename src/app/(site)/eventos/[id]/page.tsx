@@ -68,7 +68,7 @@ export default async function NewsPage({ params }) {
                     ))}
                 </div>
             </div>
-            <p className="text-sm font-normal flex flex-col gap-2" dangerouslySetInnerHTML={createMarkup(event.description)} />
+            <p className="text-sm font-normal flex flex-col gap-2">{event.description}</p>
         </div>
     )
 }
