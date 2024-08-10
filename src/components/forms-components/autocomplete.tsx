@@ -3,15 +3,16 @@ import { OptionSelectProps } from '../../hooks/useSelect';
 import { FiChevronDown, FiX } from 'react-icons/fi';
 
 interface Props {
-    title?: string;
+    label?: string;
     placeholder?: string;
     value: OptionSelectProps;
     onChange: any;
     options?: OptionSelectProps[];
     onBlur?: (str: string) => void;
+    required?: boolean;
 }
 
-const Autocomplete = ({ onChange, title, value, onBlur, options, placeholder }: Props) => {
+const Autocomplete = ({ onChange, label, value, onBlur, options, placeholder, required }: Props) => {
     const inputRef = React.useRef(null);
     const [inputValue, setInputValue] = useState('');
     const [isOpen, setIsOpen] = useState(false);
@@ -78,10 +79,13 @@ const Autocomplete = ({ onChange, title, value, onBlur, options, placeholder }: 
     }, [value]);
 
     return (
-        <div className="relative flex flex-col w-full">
-            {title && <label className='text-sm font-medium mb-1 text-zinc-800'>{title}</label>}
+        <div className="relative flex flex-col gap-1 w-full">
+            <div className="flex gap-1 justify-between items-center">
+                <label className="text-sm font-medium text-zinc-800">{label}</label>
+                {required ? <span className="font-medium text-xs text-red-500">(obrigatório)</span> : <span className="font-normal text-xs text-zinc-500">(opcional)</span>}
+            </div>
             <div className="relative flex flex-col w-full" ref={inputRef}>
-                <div className={`flex w-full px-4 py-2 h-12 rounded border bg-white focus:outline-none focus:border-blue-500 ${isOpen && 'border-primary-600'}`}>
+                <div className={`flex w-full px-4 h-14 items-center border border-gray-400 bg-white focus:outline-none focus:border-blue-500 ${isOpen && 'border-primary-600'}`}>
                     <input
                         type="text"
                         className="w-full focus:outline-none text-sm h-8"
@@ -112,7 +116,7 @@ const Autocomplete = ({ onChange, title, value, onBlur, options, placeholder }: 
                                 .map((option, index) => (
                                     <li
                                         key={index}
-                                        className={`px-4 py-2 cursor-pointer hover:bg-gray-200 ${value?.id === option.id && 'bg-purple-100 text-purple-900 font-medium'} ${highlightedIndex === index && 'bg-gray-100'}`}
+                                        className={`px-4 py-2 cursor-pointer ${value?.id === option.id ? 'bg-blue-100 text-blue-900 font-medium' : 'hover:bg-gray-200'} ${highlightedIndex === index && 'bg-gray-100'}`}
                                         onClick={() => handleOptionClick(option)}
                                     >
                                         {option.name}

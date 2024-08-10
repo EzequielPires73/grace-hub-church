@@ -11,6 +11,7 @@ import { positionData } from "@/utils/data";
 import { IChurch } from "@/models/church";
 import { IEventSchedule } from "@/models/event-schedule";
 import { api } from "@/services/api";
+import Autocomplete from "../forms-components/autocomplete";
 
 export function ModalCreatePresence({ churches, schedule }: { churches: IChurch[], schedule: IEventSchedule }) {
     const router = useRouter();
@@ -30,7 +31,7 @@ export function ModalCreatePresence({ churches, schedule }: { churches: IChurch[
     const handleSubmit = async () => {
         try {
             setLoading(true);
-            if (name.validate() && cpf.validate() && position.validate() && congregation.validate()) {
+            if (name.validate() && position.validate() && congregation.validate()) {
                 const { data, message, success } = await api.post('event-schedule/mark-presence', {
                     name: name.value,
                     cpf: cpf.value,
@@ -73,7 +74,6 @@ export function ModalCreatePresence({ churches, schedule }: { churches: IChurch[
                     label="CPF"
                     placeholder="000.000.000-00"
                     {...cpf}
-                    required
                 />
                 <InputText
                     id="name"
@@ -83,7 +83,7 @@ export function ModalCreatePresence({ churches, schedule }: { churches: IChurch[
                     error={null}
                 />
             </div>
-            <Select
+            <Autocomplete
                 label="Congregação"
                 placeholder="Selecione a sua congregação"
                 {...congregation}
