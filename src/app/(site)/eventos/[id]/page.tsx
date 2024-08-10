@@ -38,11 +38,11 @@ export default async function NewsPage({ params }) {
                     <Title text={event.name} />
                     <div className="flex items-center gap-2">
                         <FiCalendar className="text-orange-600" />
-                        <Label text={dates.startDate} />
+                        <Label text={formatDate(new Date(dates.startDate))} />
                     </div>
                     <div className="flex items-center gap-2">
                         <FiClock className="text-orange-600" />
-                        <Label text={dates.startTime} />
+                        <Label text={new Date(dates.startTime).toLocaleTimeString()} />
                     </div>
                 </div>
                 <button className="bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center text-white">
