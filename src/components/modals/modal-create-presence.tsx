@@ -51,7 +51,7 @@ export function ModalCreatePresence({ churches, schedule }: { churches: IChurch[
         }
     }
 
-    const validateForm = () => name.validate() && cpf.validate() && position.validate() && congregation.validate();
+    const validateForm = () => name.validate() && position.validate() && congregation.validate();
 
     return (
         <ModalDefault
