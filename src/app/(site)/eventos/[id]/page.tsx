@@ -22,10 +22,7 @@ export default async function NewsPage({ params }) {
     const { data } = await fetchData('churches?limit=50', 0);
     const { data: event }: { data: IEvent } = await fetchData(`events/${params.id}`, 0);
     const dates = getEventDates(event);
-
-    function createMarkup(content: string) {
-        return { __html: content.replaceAll('pt;', 'px;') };
-    }
+    const currentDate = new Date().toLocaleDateString();
 
     return (
         <div className="flex-1 flex flex-col gap-6 w-full max-w-[800px] px-3 mx-auto lg:py-6 mb-6">
@@ -52,7 +49,7 @@ export default async function NewsPage({ params }) {
                     <FiShare />
                 </button>
             </div>
-            <div className="flex flex-col gap-4">
+            {currentDate == dates.startDate && <div className="flex flex-col gap-4">
                 <Label text={'Horários do evento'} />
                 <div className="grid lgÇgrid-cols-3">
                     {event.schedules.map(item => (
@@ -67,7 +64,7 @@ export default async function NewsPage({ params }) {
                         </div>
                     ))}
                 </div>
-            </div>
+            </div>}
             <p className="text-sm font-normal flex flex-col gap-2">{event.description}</p>
         </div>
     )

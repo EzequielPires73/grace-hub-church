@@ -5,10 +5,6 @@ import Link from "next/link";
 import { FiCalendar } from "react-icons/fi";
 
 export function CardEvent({ event }: { event: IEvent }) {
-    function createMarkup(content: string) {
-        return { __html: content.replaceAll('pt;', 'px;') };
-    }
-
     return (
         <Link href={`/eventos/${event.id}`} className="p-2 border transition-colors hover:border-gray-500 border-gray-300 flex flex-col">
             {event.image &&
