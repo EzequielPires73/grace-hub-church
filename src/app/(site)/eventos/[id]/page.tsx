@@ -6,11 +6,22 @@ import { fetchData } from "@/helpers/fetch";
 import { getImagePath } from "@/helpers/functions";
 import { IEvent } from "@/models/event";
 import Image from "next/image";
-import { FiCalendar, FiShare } from "react-icons/fi";
+import { FiCalendar, FiClock, FiShare } from "react-icons/fi";
+
+function getEventDates(event: IEvent) {
+    const startDates = event.schedules.map(schedule => schedule.date + ' ' + schedule.start);
+    const minStartDate = new Date(Math.min(...startDates.map(date => new Date(date).getTime())));
+
+    return {
+        startDate: minStartDate?.toLocaleDateString(),
+        startTime: minStartDate?.toLocaleTimeString(),
+    };
+}
 
 export default async function NewsPage({ params }) {
     const { data } = await fetchData('churches?limit=50', 0);
     const { data: event }: { data: IEvent } = await fetchData(`events/${params.id}`, 0);
+    const dates = getEventDates(event);
 
     function createMarkup(content: string) {
         return { __html: content.replaceAll('pt;', 'px;') };
@@ -30,7 +41,11 @@ export default async function NewsPage({ params }) {
                     <Title text={event.name} />
                     <div className="flex items-center gap-2">
                         <FiCalendar className="text-orange-600" />
-                        <Label text={'25 de maio de 2024'} />
+                        <Label text={dates.startDate} />
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <FiClock className="text-orange-600" />
+                        <Label text={dates.startTime} />
                     </div>
                 </div>
                 <button className="bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center text-white">
@@ -46,7 +61,7 @@ export default async function NewsPage({ params }) {
                             <span className="text-sm">Data: {formatDate(new Date(item.date))}</span>
                             <div className="flex gap-4 flex-wrap mb-2">
                                 <span className="text-sm">Início: <strong>{item.start}</strong></span>
-                                <span className="text-sm">Final: <strong>{item.end}</strong></span>
+                                {/* <span className="text-sm">Final: <strong>{item.end}</strong></span> */}
                             </div>
                             <ModalCreatePresence churches={data} schedule={item} />
                         </div>

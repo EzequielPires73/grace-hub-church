@@ -57,7 +57,7 @@ export function ModalDefault({ submit, validate, title, buttonTitle, children, b
                             <ButtonPrimary title="Confirmar" loading={loading} full onClick={async () => {
                                 if(validate && validate()) {
                                     await submit();
-                                    setShowModal(false);
+                                    //setShowModal(false);
                                 }
                             }} />
                         </footer>

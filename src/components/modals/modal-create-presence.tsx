@@ -39,21 +39,12 @@ export function ModalCreatePresence({ churches, schedule }: { churches: IChurch[
                     congregationId: congregation.value.id,
                     id: schedule.id
                 }).then(res => res.data);
-                console.log(data, message, success);
-                alert(message);
-                name.setValue();
-                cpf.setValue();
-                phone.setValue();
-                congregation.clear();
-                position.clear();
+                if(success) {
+                    router.push(`/eventos/sucesso/${data.id}`);
+                }
             }
         } catch (error) {
             alert(error?.response?.data?.error ?? error.message);
-            name.setValue('');
-            cpf.setValue('');
-            phone.setValue('');
-            congregation.clear();
-            position.clear();
         } finally {
             setLoading(false);
         }
