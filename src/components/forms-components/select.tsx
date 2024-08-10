@@ -52,7 +52,7 @@ const Select = ({ onChange, label, value, onBlur, options, required, error, plac
             </div>
             <div className="relative flex flex-col w-full" ref={inputRef}>
                 <span
-                    className={`flex items-center cursor-pointer w-full px-4 h-14 bg-white border border-gray-400 focus:outline-none focus:border-blue-500 ${isOpen && 'border-blue-600'}`}
+                    className={`flex items-center cursor-pointer w-full px-4 h-16 bg-white border border-gray-400 focus:outline-none focus:border-blue-500 ${isOpen && 'border-blue-600'}`}
                     onClick={() => setIsOpen(true)}
                 >
                     {value?.name ?

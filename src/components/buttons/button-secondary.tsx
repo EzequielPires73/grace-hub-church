@@ -12,7 +12,7 @@ export function ButtonSecondary({title, full, Icon, ...options}: Props) {
     return (
         <button className={`
             ${full ? 'w-full' : 'w-fit'}
-            h-12 transition-colors rounded-md px-6 font-medium text-base
+            h-16 transition-colors rounded-md px-6 font-medium text-base
             bg-secondary text-secondary-dark hover:bg-secondary-hover active:bg-secondary-active
             flex items-center justify-center gap-2
         `} {...options}>

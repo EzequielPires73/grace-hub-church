@@ -85,7 +85,7 @@ const Autocomplete = ({ onChange, label, value, onBlur, options, placeholder, re
                 {required ? <span className="font-medium text-xs text-red-500">(obrigatório)</span> : <span className="font-normal text-xs text-zinc-500">(opcional)</span>}
             </div>
             <div className="relative flex flex-col w-full" ref={inputRef}>
-                <div className={`flex w-full px-4 h-14 items-center border border-gray-400 bg-white focus:outline-none focus:border-blue-500 ${isOpen && 'border-primary-600'}`}>
+                <div className={`flex w-full px-4 h-16 items-center border border-gray-400 bg-white focus:outline-none focus:border-blue-500 ${isOpen && 'border-primary-600'}`}>
                     <input
                         type="text"
                         className="w-full focus:outline-none text-sm h-8"

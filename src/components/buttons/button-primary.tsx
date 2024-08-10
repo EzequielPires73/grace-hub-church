@@ -30,7 +30,7 @@ export function ButtonPrimary({ title, full, Icon, path, loading, ...options }: 
         return (
             <button className={`
                 ${full ? 'w-full' : 'w-fit'}
-                h-12 transition-colors px-6 text-white font-medium text-base
+                h-16 transition-colors px-6 text-white font-medium text-base
                 bg-blue-600 hover:bg-blue-700 active:bg-blue-800
                 flex items-center justify-center gap-2
             `} {...options}>

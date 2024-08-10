@@ -27,7 +27,7 @@ export function InputText({ label, disabled, error, id, onBlur, onChange, placeh
             <div className="relative flex items-center">
                 <input
                     className={`
-                        w-full bg-white border border-gray-400 h-14 text-sm text-zinc-900 outline-none p-3 flex-1 text-ellipsis
+                        w-full bg-white border border-gray-400 h-16 text-sm text-zinc-900 outline-none p-3 flex-1 text-ellipsis
                         placeholder:text-gray-500 placeholder:text-sm placeholder:font-normal
                         ${error && required ? 'border-red-500' : 'focus:border-blue-600'} 
                         ${type == 'password' && 'pr-8'}
