@@ -3,6 +3,7 @@ import { HomeSectionLocations } from "@/components/home-sections/home-section-lo
 import { HomeSectionNotices } from "@/components/home-sections/home-section-notices";
 import { HomeSectionPrayers } from "@/components/home-sections/home-section-prayers";
 import HomeSectionRadio from "@/components/home-sections/home-section-radio";
+import { HomeSectionSchedule } from "@/components/home-sections/home-section-schedule";
 import { HomeSectionShepherd } from "@/components/home-sections/home-section-shepherd";
 import { HomeSectionYoutube } from "@/components/home-sections/home-section-youtube";
 import { fetchData } from "@/helpers/fetch";
@@ -33,6 +34,7 @@ export default async function Home() {
           <HomeSectionRadio />
           <HomeSectionLive />
         </div>
+        <HomeSectionSchedule />
         <HomeSectionShepherd />
         <HomeSectionNotices notices={notices} />
         <HomeSectionPrayers />
