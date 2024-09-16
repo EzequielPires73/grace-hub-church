@@ -21,8 +21,8 @@ export default async function Home() {
           <div className="relative w-full max-md:h-[calc(100vh-80px)] h-[calc(100vh-96px)] flex justify-center">
             <img src={'/assets/bg-home-4.png'} alt="" className="object-cover w-full h-full" />
             <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-linear flex flex-col items-center justify-center text-center">
-              <h1 className="text-white text-6xl font-semibold">Bem-vindo à Família AD Catalão!</h1>
-              <h2 className="text-white text-3xl font-light mt-4">Junte-se a nós em uma jornada de fé, amor e comunidade.</h2>
+              <h1 className="text-white text-4xl lg:text-6xl font-semibold">Bem-vindo à Família AD Catalão!</h1>
+              <h2 className="text-white text-xl lg:text-3xl font-light lg:mt-4">Junte-se a nós em uma jornada de fé, amor e comunidade.</h2>
               <Link href={'/igreja'} className="h-14 min-w-[168px] border bg-white hover:bg-gray-100 active::bg-gray-200 transition-colors text-gray-800 px-12 flex items-center justify-center gap-4 mt-4">
                 Saiba mais
               </Link>

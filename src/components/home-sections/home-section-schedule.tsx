@@ -7,10 +7,7 @@ export function HomeSectionSchedule() {
             <div className="w-full max-w-5xl mx-auto flex min-h-[500px]">
                 <div className="flex-1 bg-white">
                     <div className="p-6 flex flex-col gap-4">
-                        <div className="relative min-w-[190px] w-fit h-9">
-                            <div className="h-4 absolute bg-red-300 left-3 -right-3 bottom-0"></div>
-                            <h3 className="absolute text-3xl w-fit font-semibold">Programação</h3>
-                        </div>
+                        <h3 className="text-3xl w-fit font-semibold">Programação</h3>
                         <div className="flex flex-col">
                             <h4 className="text-lg font-medium">Domingo</h4>
                             <span>09h30 - Escola Bíblica</span>
