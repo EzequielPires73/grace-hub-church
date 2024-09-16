@@ -8,14 +8,14 @@ export function CardChurch({ church }) {
         <Link href={`/congregacoes`} className="p-2 border transition-colors hover:border-gray-500 border-gray-300 flex flex-col">
             {church?.logo ?
                 <div className="w-full h-[220px] relative overflow-hidden">
-                    <img src={getImagePath(church.logo)} alt="" className="object-cover w-full h-full" />
+                    <img src={getImagePath(church.logo)} alt="" className="object-cover w-full h-full absolute" />
                     <div className="absolute top-0 left-0 right-0 bottom-0 backdrop-blur-lg"></div>
-                    <img src={getImagePath(church.logo)} alt="" className="object-contain w-full h-full" />
+                    <img src={getImagePath(church.logo)} alt="" className="object-contain w-full h-full absolute" />
                 </div> :
                 <div className="w-full h-[220px] relative overflow-hidden">
-                    <img src={'/no-image.png'} alt="" className="object-cover w-full h-full" />
+                    <img src={'/no-image.png'} alt="" className="object-cover w-full h-full absolute" />
                     <div className="absolute top-0 left-0 right-0 bottom-0 backdrop-blur-lg"></div>
-                    <img src={'/no-image.png'} alt="" className="object-contain w-full h-full" />
+                    <img src={'/no-image.png'} alt="" className="object-contain w-full h-full absolute" />
                 </div>
             }
             <div className="flex flex-col flex-1">

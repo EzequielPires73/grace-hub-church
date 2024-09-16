@@ -9,9 +9,9 @@ export function CardEvent({ event }: { event: IEvent }) {
         <Link href={`/eventos/${event.id}`} className="p-2 border transition-colors hover:border-gray-500 border-gray-300 flex flex-col">
             {event.image &&
                 <div className="w-full h-[220px] relative overflow-hidden">
-                    <img src={getImagePath(event.image)} alt="" className="object-cover w-full h-full" />
+                    <img src={getImagePath(event.image)} alt="" className="object-cover w-full h-full absolute" />
                     <div className="absolute top-0 left-0 right-0 bottom-0 backdrop-blur-lg"></div>
-                    <img src={getImagePath(event.image)} alt="" className="object-contain w-full h-full" />
+                    <img src={getImagePath(event.image)} alt="" className="object-contain w-full h-full absolute" />
                 </div>
             }
             <div className="flex flex-col flex-1">

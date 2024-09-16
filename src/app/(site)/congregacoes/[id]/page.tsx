@@ -20,7 +20,7 @@ export default async function NewsPage({ params }) {
                 <div className="w-full h-[248px] lg:h-[336px] relative overflow-hidden">
                     <img src={getImagePath(data.logo)} alt="" className="object-cover w-full h-full" />
                     <div className="absolute top-0 left-0 right-0 bottom-0 backdrop-blur-lg"></div>
-                    <img src={getImagePath(data.logo)} alt="" className="object-contain w-full h-full" />
+                    <img src={getImagePath(data.logo)} alt="" className="object-contain w-full h-full absolute" />
                 </div>
             }
             <div className="flex flex-col gap-6">
