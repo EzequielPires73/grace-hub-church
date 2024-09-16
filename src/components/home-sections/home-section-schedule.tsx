@@ -47,7 +47,7 @@ export function HomeSectionSchedule() {
                         </div>
                     </div>
                 </div>
-                <div className="flex-1 relative">
+                <div className="hidden lg:flex flex-1 relative">
                     <img src={'/assets/bg-home-5.jpg'} alt="" className="object-cover w-full h-full" />
                 </div>
             </div>
