@@ -17,7 +17,7 @@ export function MenuHeader({ user }) {
                     <aside className="w-full h-full lg:max-w-lg bg-white p-6 flex flex-col gap-6">
                         <button onClick={() => setShow(!show)}><FiX size={24} /></button>
                         <Link href={'/'} className="mx-auto">
-                            <Image src="/assets/logo-v.svg" alt="Logo" width={120} height={120} />
+                            <img src="/assets/logo-v.svg" alt="Logo" className="w-[120px] h-[120px]" />
                         </Link>
                         <Link
                             href={'/'}

@@ -19,7 +19,7 @@ export default async function Home() {
       <section>
         <div className="bg-background-aux flex flex-col">
           <div className="relative w-full max-md:h-[calc(100vh-80px)] h-[calc(100vh-96px)] flex justify-center">
-            <Image src={'/assets/bg-home-4.png'} alt="" fill objectFit="cover" />
+            <img src={'/assets/bg-home-4.png'} alt="" className="object-cover w-full h-full" />
             <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-linear flex flex-col items-center justify-center text-center">
               <h1 className="text-white text-6xl font-semibold">Bem-vindo à Família AD Catalão!</h1>
               <h2 className="text-white text-3xl font-light mt-4">Junte-se a nós em uma jornada de fé, amor e comunidade.</h2>

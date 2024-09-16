@@ -5,8 +5,7 @@ import { formatDate } from "@/helpers/date";
 import { fetchData } from "@/helpers/fetch";
 import { getImagePath } from "@/helpers/functions";
 import { IEvent } from "@/models/event";
-import Image from "next/image";
-import { FiCalendar, FiClock, FiShare } from "react-icons/fi";
+import { FiCalendar, FiShare } from "react-icons/fi";
 
 function getEventDates(event: IEvent) {
     const startDates = event.schedules.map(schedule => schedule.date + ' ' + schedule.start);
@@ -28,9 +27,9 @@ export default async function NewsPage({ params }) {
         <div className="flex-1 flex flex-col gap-6 w-full max-w-[800px] px-3 mx-auto lg:py-6 mb-6">
             {event.image &&
                 <div className="w-full h-[248px] lg:h-[336px] relative overflow-hidden">
-                    <Image src={getImagePath(event.image)} alt="" fill objectFit="cover" />
+                    <img src={getImagePath(event.image)} alt="" className="object-cover w-full h-full" />
                     <div className="absolute top-0 left-0 right-0 bottom-0 backdrop-blur-lg"></div>
-                    <Image src={getImagePath(event.image)} alt="" fill objectFit="contain" />
+                    <img src={getImagePath(event.image)} alt="" className="object-contain w-full h-full" />
                 </div>
             }
             <div className="w-full flex items-center justify-between gap-6">

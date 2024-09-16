@@ -6,7 +6,7 @@ export function HomeSectionShepherd() {
     <section className="h-fit relative bg-white">
       <section className="min-h-[400px] max-md:py-10 relative">
         <section className="h-full min-h-[400px] flex flex-wrap items-center gap-4 w-full max-w-7xl px-3 mx-auto">
-          <Image src={"/assets/pastores.png"} alt="" width={348} height={200} />
+          <img src={"/assets/pastores.png"} alt="" className="w-[348px] h-[200px]" />
           <div className="flex flex-col min-w-72 max-w-[50%] text-background-aux z-50">
             <h2 className="text-xl font-semibold text-background-aux">PR. CORNÉLIO NETO</h2>
             <h3 className="text-base font-medium mb-2 text-background-aux/90">Pastor Presidente da AD Catalão</h3>

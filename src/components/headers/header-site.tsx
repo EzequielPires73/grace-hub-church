@@ -17,7 +17,7 @@ export function HeaderSite({ user }: { user?: IUser }) {
         <>
             <header className="min-lg:hidden h-20 bg-white border-b fixed w-full top-0 flex justify-between items-center px-3 z-[9999]">
                 <Link href={'/'}>
-                    <Image src="/assets/logo-icon.svg" alt="Logo" width={64} height={64} />
+                    <img src="/assets/logo-icon.svg" alt="Logo" className="w-16 h-16" />
                 </Link>
                 <MenuHeader user={user} />
             </header>
@@ -27,7 +27,7 @@ export function HeaderSite({ user }: { user?: IUser }) {
                         <MenuHeader user={user} />
                     </div>
                     <Link href={'/'} className="col-span-8 flex items-center justify-center">
-                        <Image src="/assets/logo-icon.svg" alt="Logo" width={80} height={80} />
+                        <img src="/assets/logo-icon.svg" alt="Logo" className="w-20 h-20" />
                     </Link>
                     <ul className="text-gray-800 flex items-center justify-end gap-6 max-lg:hidden col-span-2">
                         <li>

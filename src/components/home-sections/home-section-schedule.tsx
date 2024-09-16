@@ -1,6 +1,4 @@
 import Image from "next/image";
-import { Title } from "../typography/title";
-import { Label } from "../typography/label";
 import Link from "next/link";
 
 export function HomeSectionSchedule() {
@@ -50,7 +48,7 @@ export function HomeSectionSchedule() {
                     </div>
                 </div>
                 <div className="flex-1 relative">
-                    <Image src={'/assets/bg-home-5.jpg'} alt="" fill className="object-cover" />
+                    <img src={'/assets/bg-home-5.jpg'} alt="" className="object-cover w-full h-full" />
                 </div>
             </div>
         </section>
